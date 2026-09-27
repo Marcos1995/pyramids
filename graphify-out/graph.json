@@ -201,7 +201,7 @@
       "node_kind": "heading",
       "norm_label": "comandos utiles",
       "source_file": "PROJECT.md",
-      "source_location": "L16"
+      "source_location": "L17"
     },
     {
       "id": "project_contexto_del_proyecto",
@@ -237,7 +237,7 @@
       "node_kind": "heading",
       "norm_label": "notas para el agente",
       "source_file": "PROJECT.md",
-      "source_location": "L21"
+      "source_location": "L22"
     },
     {
       "id": "project_produccion",
@@ -261,7 +261,7 @@
       "node_kind": "heading",
       "norm_label": "stack",
       "source_file": "PROJECT.md",
-      "source_location": "L13"
+      "source_location": "L14"
     },
     {
       "id": "cursor_skills_verify_skill",
@@ -485,7 +485,7 @@
       "label": "README.md",
       "_origin": "ast",
       "community": 7,
-      "community_name": "README.md",
+      "community_name": "Pir\u00e1mides y el radar de Filippo Biondi",
       "file_type": "document",
       "node_kind": "page",
       "norm_label": "readme.md",
@@ -493,11 +493,23 @@
       "source_location": "L1"
     },
     {
+      "id": "readme_agent_kit",
+      "label": "Agent kit",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "Pir\u00e1mides y el radar de Filippo Biondi",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "agent kit",
+      "source_file": "README.md",
+      "source_location": "L10"
+    },
+    {
       "id": "readme_pir\u00e1mides_y_el_radar_de_filippo_biondi",
       "label": "Pir\u00e1mides y el radar de Filippo Biondi",
       "_origin": "ast",
       "community": 7,
-      "community_name": "README.md",
+      "community_name": "Pir\u00e1mides y el radar de Filippo Biondi",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "piramides y el radar de filippo biondi",
@@ -835,7 +847,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "PROJECT.md",
-      "source_location": "L13",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -846,7 +858,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "PROJECT.md",
-      "source_location": "L16",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -857,7 +869,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "PROJECT.md",
-      "source_location": "L21",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -892,7 +904,19 @@
       "source_file": "README.md",
       "source_location": "L1",
       "weight": 1.0
+    },
+    {
+      "source": "readme_pir\u00e1mides_y_el_radar_de_filippo_biondi",
+      "target": "readme_agent_kit",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "L10",
+      "weight": 1.0
     }
   ],
-  "hyperedges": []
+  "hyperedges": [],
+  "built_at_commit": "da06d05202325e52b57ecacdae15b09dd6f0dfbe"
 }

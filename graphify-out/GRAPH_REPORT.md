@@ -1,14 +1,19 @@
 # Graph Report - pyramids  (2026-09-27)
 
 ## Corpus Check
-- 10 files · ~6,498 words
+- 10 files · ~10,062 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 2 file(s) not represented in the graph (top: .mdc 2)
 
 ## Summary
-- 42 nodes · 32 edges · 10 communities (7 shown, 3 thin omitted)
+- 43 nodes · 33 edges · 10 communities (7 shown, 3 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
+
+## Graph Freshness
+- Built from commit: `da06d052`
+- Run `git rev-parse HEAD` and compare to check if the graph is stale.
+- Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - Debug
@@ -18,7 +23,7 @@
 - Agent rules
 - Decide
 - Review
-- README.md
+- Pirámides y el radar de Filippo Biondi
 
 ## God Nodes (most connected - your core abstractions)
 1. `Debug` - 6 edges
@@ -28,9 +33,9 @@
 5. `Decide` - 3 edges
 6. `Review` - 3 edges
 7. `Agent rules` - 3 edges
-8. `1. Root cause` - 1 edges
-9. `2. Compare` - 1 edges
-10. `3. Hypothesis` - 1 edges
+8. `Pirámides y el radar de Filippo Biondi` - 2 edges
+9. `1. Root cause` - 1 edges
+10. `2. Compare` - 1 edges
 
 ## Surprising Connections (you probably didn't know these)
 - None detected - all connections are within the same source files.

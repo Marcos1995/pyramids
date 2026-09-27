@@ -230,9 +230,30 @@
     .sources { columns: 2; gap: 1.5rem; padding-left: 1.1rem; }
     .sources li { break-inside: avoid; margin: 0 0 0.7rem; }
     .sources a { overflow-wrap: anywhere; }
+    .stage { display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 0.85rem; margin: 1.1rem 0 1.5rem; align-items: start; }
+    .player, .need { border: 1px solid var(--line); border-radius: var(--radius); background: var(--sand); padding: 0.75rem 0.85rem 0.9rem; }
+    .need { background: var(--surface); }
+    .need p, .player .cap { margin: 0.35rem 0 0; color: var(--muted); font-size: 0.92rem; }
+    .disclaimer { margin: 0; font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
+    .player-bar { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; margin: 0.55rem 0; }
+    .player-bar button {
+      font: inherit; font-size: 0.86rem; cursor: pointer;
+      border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+      border-radius: 999px; padding: 0.28rem 0.7rem;
+    }
+    .player-bar button:hover { border-color: var(--accent); }
+    .player-bar button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); }
+    .live { color: var(--muted); font-size: 0.84rem; }
+    .player svg, .frames svg { width: 100%; height: auto; display: block; }
+    .frames { position: relative; aspect-ratio: 16 / 10; background: var(--sand); border-radius: 10px; overflow: hidden; }
+    .frames svg { position: absolute; inset: 0; height: 100%; opacity: 0; }
+    .frames svg.on { opacity: 1; }
+    .shaft, .spiral, .cube, .claimed { opacity: 0; }
+    .player.is-final .shaft, .player.is-final .spiral, .player.is-final .cube, .player.is-final .claimed { opacity: 1; }
+    .player.is-final .scanline { opacity: 0; }
     footer.colophon { padding: 1.5rem 0 2.5rem; color: var(--muted); font-size: 0.88rem; border-top: 1px solid var(--line); }
     @media (max-width: 980px) {
-      header.hero, .grid-2, .schemes, .quotes { grid-template-columns: 1fr; }
+      header.hero, .grid-2, .schemes, .quotes, .stage { grid-template-columns: 1fr; }
       .grid-3 { grid-template-columns: 1fr 1fr; }
       .sources { columns: 1; }
     }
@@ -256,6 +277,10 @@
       <a href="#afirma">Afirmaciones</a>
       <a href="#metodo">Método</a>
       <a href="#imagenes">Imágenes</a>
+      <a href="#animaciones">Animaciones</a>
+      <a href="#antiguedad">Antigüedad</a>
+      <a href="#otros">Otros</a>
+      <a href="#novedades">Novedades</a>
       <a href="#datos">Datos</a>
       <a href="#patentes">Patentes</a>
       <a href="#balance">Balance</a>
@@ -272,8 +297,8 @@
         <div>
           <p class="kicker">Síntesis crítica · 27 sep 2026</p>
           <h1>Lo que Filippo Biondi dice haber visto dentro de las pirámides</h1>
-          <p class="lede">Una sola página para leer, en claro, qué publicó, qué anunció en rueda de prensa y qué sigue sin comprobarse. Los dibujos de esta página son esquemas propios: no son imágenes de radar.</p>
-          <p class="note">Nada de lo que sigue es un aval. Cada cifra lleva su fuente. Donde una fuente no existe, se dice.</p>
+          <p class="lede">Una página de ciencia: separa la afirmación, la evidencia y el estado (revisado, no revisado, retractado o contradicho). Los dibujos son esquemas propios, no imágenes de radar.</p>
+          <p class="note">No es un aval ni un sitio de teorías. Cada cifra lleva su fuente. Donde una fuente no existe, se dice.</p>
         </div>
         <figure class="hero-fig">
           <svg viewBox="0 0 420 280" role="img" aria-labelledby="heroTitle heroDesc">
@@ -436,6 +461,153 @@
         </div>
       </section>
 
+      <section id="animaciones" class="reveal">
+        <h2>Recreaciones animadas</h2>
+        <p>Tres esquemas de lo que Biondi describe. El botón reproduce el orden del anuncio. No son tomogramas.</p>
+
+        <div class="stage">
+          <figure class="player is-final" id="play-khafre" data-kind="khafre">
+            <p class="disclaimer">Recreación esquemática de lo que afirma Biondi, no verificado</p>
+            <div class="player-bar">
+              <button type="button" data-act="play">Reproducir</button>
+              <button type="button" data-act="replay">Otra vez</button>
+              <span class="live" aria-live="polite">Estado final: ocho pozos y dos cubos.</span>
+            </div>
+            <svg viewBox="0 0 400 460" role="img" aria-label="Corte de Kefrén a escala: pirámide, ocho pozos hasta 648 metros y dos cubos">
+              <rect width="400" height="460" fill="transparent"/>
+              <line x1="36" y1="78" x2="36" y2="430" stroke="var(--muted)" stroke-width="1"/>
+              <g fill="var(--muted)" font-size="11" font-family="Figtree, sans-serif">
+                <text x="6" y="82">0</text>
+                <text x="6" y="186">200</text>
+                <text x="6" y="294">400</text>
+                <text x="6" y="424">648</text>
+              </g>
+              <path d="M48 78 H384" stroke="var(--ink)" stroke-width="1.2"/>
+              <path d="M168 78 L200 16 L232 78 Z" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
+              <rect class="scanline" x="52" y="20" width="2" height="390" fill="var(--accent)" opacity="0.8"/>
+              <g class="shafts" fill="none" stroke="var(--accent)" stroke-width="1.4">
+                <path class="shaft" d="M70 78 V400"/><path class="shaft" d="M98 78 V408"/>
+                <path class="shaft" d="M126 78 V416"/><path class="shaft" d="M154 78 V422"/>
+                <path class="shaft" d="M246 78 V422"/><path class="shaft" d="M274 78 V416"/>
+                <path class="shaft" d="M302 78 V408"/><path class="shaft" d="M330 78 V400"/>
+              </g>
+              <g class="spirals" fill="none" stroke="var(--accent)" stroke-width="1">
+                <path class="spiral" d="M74 110 h10 M74 150 h10 M74 190 h10 M74 240 h10 M74 290 h10"/>
+                <path class="spiral" d="M102 120 h10 M102 160 h10 M102 210 h10 M102 260 h10 M102 320 h10"/>
+                <path class="spiral" d="M130 130 h10 M130 180 h10 M130 230 h10 M130 280 h10 M130 340 h10"/>
+                <path class="spiral" d="M158 140 h10 M158 190 h10 M158 240 h10 M158 300 h10 M158 360 h10"/>
+                <path class="spiral" d="M250 140 h10 M250 190 h10 M250 240 h10 M250 300 h10 M250 360 h10"/>
+                <path class="spiral" d="M278 130 h10 M278 180 h10 M278 230 h10 M278 280 h10 M278 340 h10"/>
+                <path class="spiral" d="M306 120 h10 M306 160 h10 M306 210 h10 M306 260 h10 M306 320 h10"/>
+                <path class="spiral" d="M334 110 h10 M334 150 h10 M334 190 h10 M334 240 h10 M334 290 h10"/>
+              </g>
+              <g class="cubes" fill="none" stroke="var(--accent)" stroke-width="1.5">
+                <rect class="cube" x="62" y="400" width="100" height="42"/>
+                <rect class="cube" x="238" y="400" width="100" height="42"/>
+              </g>
+            </svg>
+            <p class="cap">Escala: Kefrén mide unos 136 m; los pozos del anuncio, 648 m. Los cubos, unos 80 m de lado. Marzo de 2025, sin artículo.</p>
+          </figure>
+          <aside class="need">
+            <h3>Qué haría falta para que esto fuera real</h3>
+            <p>Un eco en banda X (longitud de onda 3,1 cm) se atenúa en decímetros de arena seca, no en 648 m de caliza. Haría falta un balance de energía, barras de error y una comprobación en el terreno (georradar, sísmica, muones o un sondeo) en un punto que el modelo señale.</p>
+          </aside>
+        </div>
+
+        <div class="stage">
+          <figure class="player is-final" id="play-khufu" data-kind="khufu">
+            <p class="disclaimer">Recreación esquemática de lo que afirma Biondi, no verificado</p>
+            <div class="player-bar">
+              <button type="button" data-act="known" aria-pressed="false">Conocido</button>
+              <button type="button" data-act="claimed" aria-pressed="true">Afirmado por Biondi</button>
+              <button type="button" data-act="play">Reproducir</button>
+              <span class="live" aria-live="polite">Se ven las salas conocidas y, en discontinuo, lo nuevo del artículo retractado.</span>
+            </div>
+            <svg viewBox="0 0 360 280" role="img" aria-label="Corte de Keops: cámaras conocidas y estructuras que el artículo de 2022 dio por nuevas">
+              <rect width="360" height="280" fill="transparent"/>
+              <path d="M24 250 H336" stroke="var(--ink)" stroke-width="1.2"/>
+              <path d="M50 250 L180 36 L310 250 Z" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
+              <g class="known" fill="none" stroke="var(--ink)" stroke-width="1.3">
+                <rect x="186" y="118" width="36" height="14"/>
+                <path d="M190 108 h28 M190 102 h28 M190 96 h28"/>
+                <path d="M168 150 l28 -22 h28"/>
+                <rect x="156" y="162" width="22" height="12"/>
+                <path d="M140 250 v-46 l22 -16"/>
+              </g>
+              <g class="claimed" fill="none" stroke="var(--accent)" stroke-width="1.3" stroke-dasharray="4 3">
+                <path d="M90 230 L150 120"/>
+                <path d="M270 230 L214 120"/>
+                <path d="M120 120 H250"/>
+                <rect x="200" y="92" width="40" height="16"/>
+              </g>
+              <g fill="var(--muted)" font-size="11" font-family="Figtree, sans-serif">
+                <text x="228" y="112">rey</text>
+                <text x="228" y="148">galería</text>
+                <text x="182" y="174">reina</text>
+              </g>
+            </svg>
+            <p class="cap">Continuo: lo ya conocido. Discontinuo: rampas, corredor sur y un vacío del artículo de 2022, retractado en 2026.</p>
+          </figure>
+          <aside class="need">
+            <h3>Qué haría falta para que esto fuera real</h3>
+            <p>Una prueba ciega: recuperar primero la cámara del rey, la de la reina y la Gran Galería en su sitio, y solo después proponer algo nuevo. El artículo que dibujó esas rampas fue retirado por fallos de método. La resolución que publican mezcla 12 500 Hz con un divisor de 25 000.</p>
+          </aside>
+        </div>
+
+        <div class="stage">
+          <figure class="player is-final" id="play-method" data-kind="method">
+            <p class="disclaimer">Recreación esquemática de lo que afirma Biondi, no verificado</p>
+            <div class="player-bar">
+              <button type="button" data-act="prev">Anterior</button>
+              <button type="button" data-act="next">Siguiente</button>
+              <button type="button" data-act="play">Reproducir</button>
+              <span class="live" aria-live="polite">Paso 5 de 5. Corte en color.</span>
+            </div>
+            <div class="frames">
+              <svg class="frame" viewBox="0 0 320 200" aria-label="Paso 1: el satélite pasa">
+                <rect width="320" height="200" fill="transparent"/>
+                <path d="M40 150 L160 70 L280 150" fill="none" stroke="var(--ink)"/>
+                <circle cx="250" cy="36" r="8" fill="none" stroke="var(--accent)"/>
+                <path d="M40 36 H230" stroke="var(--accent)" stroke-dasharray="3 3"/>
+                <text x="16" y="24" fill="var(--ink)" font-size="13" font-family="Figtree, sans-serif">1. Pasa el satélite</text>
+              </svg>
+              <svg class="frame" viewBox="0 0 320 200" aria-label="Paso 2: ecos">
+                <rect width="320" height="200" fill="transparent"/>
+                <path d="M40 160 L160 70 L280 160" fill="none" stroke="var(--ink)"/>
+                <path d="M160 70 Q200 20 250 40" fill="none" stroke="var(--accent)"/>
+                <path d="M250 40 Q180 90 160 150" fill="none" stroke="var(--accent)" stroke-dasharray="4 3"/>
+                <text x="16" y="24" fill="var(--ink)" font-size="13" font-family="Figtree, sans-serif">2. Vuelve el eco</text>
+              </svg>
+              <svg class="frame" viewBox="0 0 320 200" aria-label="Paso 3: sub-aperturas Doppler">
+                <rect width="320" height="200" fill="transparent"/>
+                <rect x="30" y="60" width="260" height="28" fill="none" stroke="var(--ink)"/>
+                <rect x="30" y="100" width="80" height="22" fill="none" stroke="var(--accent)"/>
+                <rect x="120" y="100" width="80" height="22" fill="none" stroke="var(--accent)"/>
+                <rect x="210" y="100" width="80" height="22" fill="none" stroke="var(--accent)"/>
+                <text x="16" y="24" fill="var(--ink)" font-size="13" font-family="Figtree, sans-serif">3. Se parte en sub-aperturas</text>
+              </svg>
+              <svg class="frame" viewBox="0 0 320 200" aria-label="Paso 4: mapa de vibración">
+                <rect width="320" height="200" fill="transparent"/>
+                <path d="M40 140 C80 80 120 150 160 90 C200 40 240 130 290 70" fill="none" stroke="var(--accent)" stroke-width="1.6"/>
+                <text x="16" y="24" fill="var(--ink)" font-size="13" font-family="Figtree, sans-serif">4. Mapa de vibración</text>
+              </svg>
+              <svg class="frame on" viewBox="0 0 320 200" aria-label="Paso 5: corte en color">
+                <rect width="320" height="200" fill="transparent"/>
+                <path d="M70 40 L160 170 L250 40 Z" fill="var(--sand)" stroke="var(--ink)"/>
+                <rect x="120" y="80" width="28" height="16" fill="var(--accent)" opacity="0.85"/>
+                <rect x="150" y="110" width="40" height="12" fill="var(--warn)" opacity="0.9"/>
+                <text x="16" y="24" fill="var(--ink)" font-size="13" font-family="Figtree, sans-serif">5. Corte en color</text>
+              </svg>
+            </div>
+            <p class="cap">El color del último paso es una leyenda, no una cavidad. El artículo no documenta un filtro paso bajo con ese nombre.</p>
+          </figure>
+          <aside class="need">
+            <h3>Qué haría falta para que esto fuera real</h3>
+            <p>El mismo código y la misma escena COSMO-SkyMed, con el número de sub-aperturas y la velocidad sísmica escritos. Si al cambiar un parámetro libre el dibujo se mueve, no es una medida. La vibración de una fachada, que sí se ha publicado en puentes y presas, no equivale a un mapa a cientos de metros de profundidad.</p>
+          </aside>
+        </div>
+      </section>
+
       <section id="datos" class="reveal">
         <h2>Qué dicen sus datos</h2>
         <p>Cifras tal como aparecen en las fuentes. Varias fórmulas del artículo de Keops no cierran entre sí: se copian las dos versiones, sin elegir una.</p>
@@ -536,6 +708,133 @@
         </ol>
       </section>
 
+      <section id="antiguedad" class="reveal">
+        <h2>¿Qué antigüedad tienen y cómo se construyeron? Lo que dice la ciencia</h2>
+        <p>La duda es razonable si se formula así: ¿el carbono fecha la piedra, o solo el momento en que alguien abrió o reparó el monumento? La respuesta de los proyectos de datación es más concreta, y tiene un límite que los propios autores reconocen.</p>
+        <div class="grid-2">
+          <article class="card">
+            <h3>Qué se dató, y qué no</h3>
+            <p>No se data la caliza. En 1984 el American Research Center in Egypt tomó materia orgánica de monumentos del Reino Antiguo; los resultados salieron en Haas et al. (1987). En 1995 David H. Koch financió una segunda campaña, el Pyramids Radiocarbon Dating Project. El conjunto, 269 medidas de la dinastía I a la XII, lo publicaron Bonani, Haas, Hawass, Lehner y otros en <cite>Radiocarbon</cite> (2001).</p>
+            <p>En la piedra el material era carbón y ceniza <strong>dentro del mortero</strong> de yeso, entre los bloques. El mortero se preparó al construir: se quemó leña, y esos restos entraron en la mezcla. Eso fecha la madera quemada cuando se puso el mortero, no una apertura posterior ni una reparación siglos después. No es un análisis de partículas del aire de una cámara ya abierta.</p>
+          </article>
+          <article class="card">
+            <h3>El efecto de la madera vieja</h3>
+            <p>El límite es real. La madera puede llevar siglos cortada, o ser de un árbol longevo, antes de entrar en el horno. El carbono fecha la muerte del árbol, no el día de la obra. En 1984 las medias quedaron unos 374 años más viejas que las fechas de la <cite>Cambridge Ancient History</cite>. En la dinastía IV, Bonani et al. vieron la mayoría de las fechas 200–300 años más antiguas de lo esperado. Lehner y sus coautores lo llamaron el efecto de la madera vieja: una «cronología en sombra», no una pirámide de hace diez mil años. El proyecto de 1984 se hizo, de hecho, para contrastar la hipótesis de 10 500 a. C.; los resultados cayeron en la época histórica.</p>
+            <p>Dee, Bronk Ramsey y otros reanalizaron en 2009 esas mismas medidas con estadística bayesiana y detección de valores atípicos. El desfase se reduce y se acerca a la cronología histórica. El desfase de unos pocos siglos sigue siendo una incertidumbre publicada, no un argumento para sacar las pirámides del Reino Antiguo.</p>
+          </article>
+        </div>
+        <div class="card" style="margin-top:0.85rem">
+          <h3>Otras líneas, independientes del carbono</h3>
+          <p><strong>El diario de Merer.</strong> En 2013 Pierre Tallet y Gregory Marouard excavaron en Wadi al-Jarf, en el mar Rojo, papiros del reinado de Keops. El mejor conservado es el cuaderno de Merer, inspector de una cuadrilla. En el año 27 del rey anota viajes con caliza de Tura hacia Akhet-Khufu, el horizonte de Keops, y nombra a Ankh-haf. Es contabilidad de la obra, no un relato posterior. Tallet lo presentó en 2013; el diario cubre el transporte de revestimiento, no explica cada rampa interna.</p>
+          <p><strong>El poblado y las panaderías.</strong> Al sur de la esfinge, en Heit el-Ghurab, el equipo de Mark Lehner (Ancient Egypt Research Associates) excavó un barrio de la obra, con panaderías de moldes de pan, cubas y hogares. Un informe de campo de 1991–1997 describe dos panaderías intactas en el área A7. No es un desierto vacío. El cementerio de los constructores, al sur del muro, lo excavó el equipo egipcio asociado a Zahi Hawass; esta página no ha localizado un artículo de revista único que lo resuma, y no lo trata como si lo hubiera.</p>
+          <p><strong>Marcas de cuadrilla.</strong> En las cámaras de descarga, sobre la cámara del rey, hay grafitos en ocre escritos en la cantera. Howard Vyse los copió en 1837. Incluyen nombres de equipos y un cartucho leído como Jufu. Son marcas de producción, hechas antes de cerrar los bloques, no un texto añadido por un visitante moderno.</p>
+          <p><strong>Cómo se subía la piedra.</strong> La rampa exacta de Giza no está cerrada: sigue en discusión si fue exterior, interna o una combinación. Lo que sí hay es un sistema de la misma época en la cantera de alabastro de Hatnub. En la campaña de septiembre de 2018, Roland Enmarch (Liverpool) y Yannis Gourdon (Instituto Francés de Arqueología Oriental) documentaron una rampa central con dos escaleras y agujeros de poste, de pendiente del 20 % o más, datada en el reinado de Keops. Sirve para sacar bloques de una cantera, no es el plano de la Gran Pirámide. Muestra que el problema de la pendiente tenía una solución con trineo, cuerda y postes.</p>
+          <p><strong>El agua al pie de la obra.</strong> Sheisha y otros (<cite>PNAS</cite>, 2022) reconstruyen un brazo del Nilo, el ramal de Keops, todavía alto durante los reinados de Keops, Kefrén y Micerino: alrededor del 40 % de su máximo del Holoceno. Por ahí podía llegar la piedra en barco, como dice el diario de Merer. Ghoneim y otros (<cite>Communications Earth &amp; Environment</cite>, 2024) describen un brazo más largo, Ahramat, de unos 64 km, junto a 31 pirámides, con calzadas que acaban en templos del valle a modo de embarcadero. Son dos estudios distintos, no una sola medida.</p>
+          <p>La conclusión honesta: la fecha en el Reino Antiguo y el hecho de que la obra fue humana y organizada se apoyan en varias líneas que no dependen unas de otras (mortero, papiros, poblado, grafitos, cantera, río). Queda abierto el detalle logístico: el trazado exacto de las rampas en Giza y cómo se movía la piedra dentro del monumento. Eso no vuelve inviable la construcción. La vuelve un problema de ingeniería del que ya hay piezas, no un vacío.</p>
+        </div>
+      </section>
+
+      <section id="otros" class="reveal">
+        <h2>Otros proyectos de Biondi</h2>
+        <p>Cada fila separa la afirmación, la fecha y el estado. «No revisado» significa que no hay artículo de revista localizado.</p>
+        <div class="claims">
+          <article class="claim">
+            <p>Segunda esfinge bajo un montículo de arena en Giza, con pozos verticales y pasillos, anunciada con «alrededor de un 80 %» de confianza. La prensa no coincide en la altura del montículo: unos 33 m (108 pies) en unas crónicas y unos 55 m (180 pies) en otras.</p>
+            <span class="pill warn">No revisado</span>
+            <small>26 de marzo de 2026, podcast <cite>Matt Beall Limitless</cite>, episodio con Filippo Biondi. No hay artículo firmado. Parte de la prensa lo enmarca en el Khafre Research Project (Malanga, Biondi, Mei); no consta que Malanga o Mei presentaran ese episodio. La idea de una segunda esfinge ya la había planteado Bassam El Shammaa en 2007, por textos, no por este radar.</small>
+          </article>
+          <article class="claim">
+            <p>Ocho pozos a 648 m y dos cubos bajo Kefrén. Rueda de prensa de marzo de 2025 con Malanga, Mei y, como moderadora, Nicole Ciccolo.</p>
+            <span class="pill warn">No revisado</span>
+            <small>Abstract de conferencia y AFP, abril 2025. Sin DOI de revista.</small>
+          </article>
+          <article class="claim">
+            <p>Interior nuevo de Keops con tomografía Doppler.</p>
+            <span class="pill bad">Retractado</span>
+            <small><cite>Remote Sensing</cite>, 20 de octubre de 2022; retractado el 10 de agosto de 2026.</small>
+          </article>
+          <article class="claim">
+            <p>Interior del Vesubio hasta unos 3 km, con una imagen COSMO-SkyMed.</p>
+            <span class="pill warn">Disputado</span>
+            <small><cite>Remote Sensing</cite> 2022, 14, 3828. Publicado. Una reproducción independiente de 2026 no recupera estructura profunda. No es un monumento egipcio.</small>
+          </article>
+          <article class="claim">
+            <p>Vibración de la presa de Mosul y de puentes, con sub-aperturas Doppler.</p>
+            <span class="pill ok">Publicado</span>
+            <small>IEEE JSTARS 2020 y <cite>Remote Sensing</cite> 2020. Mide la superficie de una obra a la vista. No es una licencia para ver bajo la roca.</small>
+          </article>
+          <article class="claim">
+            <p>Patente del método de tomografía subterránea.</p>
+            <span class="pill bad">Cesada</span>
+            <small>Solicitud WO2024008365A1. No concedida. Sin entrada en fase europea (2025).</small>
+          </article>
+        </div>
+        <p class="note">No se ha localizado, a 27 de septiembre de 2026, un artículo revisado de Biondi sobre la esfinge ni sobre otros monumentos egipcios aparte de los dos de Giza (el de Keops, retractado, y el anuncio de Kefrén).</p>
+      </section>
+
+      <section id="novedades" class="reveal">
+        <h2>Novedades científicas</h2>
+        <p>Lo más reciente primero. Aquí se añaden hechos comprobados: un artículo, una retractación, una excavación o una medida con fuente. Un vídeo o un podcast entra como anuncio, con su estado, no como resultado.</p>
+        <div class="timeline">
+          <article class="tl">
+            <time datetime="2026-08-31">31 ago 2026</time>
+            <div>
+              <h3>Retraction Watch explica la retirada</h3>
+              <p>Crónica de la retractación del artículo de Keops, con las objeciones de Lawrence Conyers y de Sarah Parcak. Es periodismo científico, no un experimento nuevo. <span class="pill bad">Retractado</span></p>
+            </div>
+          </article>
+          <article class="tl">
+            <time datetime="2026-08-10">10 ago 2026</time>
+            <div>
+              <h3><cite>Remote Sensing</cite> retira el artículo de 2022</h3>
+              <p>Fallos metodológicos graves y errores estadísticos. Los autores discreparon. El anuncio de Kefrén no entra en esa retractación porque no estaba publicado. <span class="pill bad">Retractado</span></p>
+            </div>
+          </article>
+          <article class="tl">
+            <time datetime="2026-07">jul 2026</time>
+            <div>
+              <h3>Reproducción independiente del método</h3>
+              <p>Hassan Foreman publica código y un preprint: con controles, el método no muestra estructura profunda reproducible en datos Umbra y Capella. No usa las escenas originales de COSMO-SkyMed. <span class="pill warn">Preprint</span></p>
+            </div>
+          </article>
+          <article class="tl">
+            <time datetime="2026-03-26">26 mar 2026</time>
+            <div>
+              <h3>Anuncio de una segunda esfinge</h3>
+              <p>Biondi, en un podcast, interpreta un montículo y unos pozos como otra esfinge. Sin artículo y con la altura del montículo en disputa entre crónicas. <span class="pill warn">No revisado</span></p>
+            </div>
+          </article>
+          <article class="tl">
+            <time datetime="2025-03">mar 2025</time>
+            <div>
+              <h3>Rueda de prensa del Proyecto Kefrén</h3>
+              <p>Ocho pozos a 648 m y dos cubos de unos 80 m. Datos que el abstract atribuye a Capella y Umbra. <span class="pill warn">No revisado</span></p>
+            </div>
+          </article>
+          <article class="tl">
+            <time datetime="2024-05-16">16 may 2024</time>
+            <div>
+              <h3>El ramal Ahramat</h3>
+              <p>Ghoneim et al., <cite>Communications Earth &amp; Environment</cite>. Un brazo fósil del Nilo de unos 64 km junto a 31 pirámides, con testigos de suelo y radar. No es un trabajo de Biondi. <span class="pill ok">Revisado</span></p>
+            </div>
+          </article>
+          <article class="tl">
+            <time datetime="2022-10">oct 2022</time>
+            <div>
+              <h3>Sale el artículo de Keops</h3>
+              <p>Biondi y Malanga, <cite>Remote Sensing</cite> 14, 5231. Años después la revista lo retira. <span class="pill bad">Retractado</span></p>
+            </div>
+          </article>
+          <article class="tl">
+            <time datetime="2022-08-29">29 ago 2022</time>
+            <div>
+              <h3>El ramal de Keops</h3>
+              <p>Sheisha et al., <cite>PNAS</cite>. El brazo local del Nilo seguía navegable en la dinastía IV. Independiente del radar de Biondi. <span class="pill ok">Revisado</span></p>
+            </div>
+          </article>
+        </div>
+      </section>
+
       <section id="fuentes" class="reveal">
         <h2>Fuentes</h2>
         <ol class="sources">
@@ -554,6 +853,15 @@
           <li>Procureur, Morishima et al., corredor norte. <cite>Nature Communications</cite> 2023. <a href="https://www.nature.com/articles/s41467-023-36351-0">nature.com/articles/s41467-023-36351-0</a></li>
           <li>Foreman, H. Reproducción y refutación, 2026. <a href="https://github.com/Hassanforeman/subsurface-sar-tomo">github.com/Hassanforeman/subsurface-sar-tomo</a></li>
           <li>Penetración en arena: órdenes 0,05–0,3 m (X) y 0,1–0,5 m (C), citados en la prospección de ‘Uqdat al-Bakrah a partir de Schaber y trabajos posteriores.</li>
+          <li>Bonani, G. et al. Radiocarbon dates of Old and Middle Kingdom monuments in Egypt. <cite>Radiocarbon</cite> 43(3), 2001. Campañas de 1984 y 1995 (David H. Koch). <a href="https://www.cambridge.org/core/journals/radiocarbon/article/radiocarbon-dates-of-old-and-middle-kingdom-monuments-in-egypt/A967302ADD527BFEB9226457682C0B4A">cambridge.org</a></li>
+          <li>Lehner, M. et al. Dating the Pyramids. <cite>Archaeology</cite>, septiembre 1999. Efecto de la madera vieja; desfase medio de 1984, unos 374 años. <a href="https://archive.archaeology.org/9909/abstracts/pyramids.html">archive.archaeology.org</a></li>
+          <li>Dee, M. W. et al. Reanalysis… <cite>Radiocarbon</cite> 51(3), 2009. <a href="https://doi.org/10.1017/S0033822200034111">doi.org/10.1017/S0033822200034111</a></li>
+          <li>Tallet, P. y el diario de Merer, año 27 de Keops. Resumen con entrevista: <a href="https://www.smithsonianmag.com/history/ancient-egypt-shipping-mining-farming-economy-pyramids-180956619/">Smithsonian Magazine</a>. Publicación de 2013: <cite>Comptes rendus de l’Académie des Inscriptions et Belles-Lettres</cite> 157(2).</li>
+          <li>Panaderías de Heit el-Ghurab, Mark Lehner. <a href="https://www.pbs.org/wgbh/nova/pyramid/excavation/fullreport.html">NOVA, informe de excavación</a>. Informe del Oriental Institute, 1993–94: <a href="https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/ar/91-00/93-94/93-94_Giza.pdf">isac.uchicago.edu</a></li>
+          <li>Rampa de Hatnub, septiembre 2018. Enmarch y Gourdon. <a href="https://news.liverpool.ac.uk/2018/11/02/ancient-quarry-ramp-system-may-have-helped-workers-build-egypts-great-pyramids/">news.liverpool.ac.uk</a></li>
+          <li>Sheisha, H. et al. <cite>PNAS</cite> 119, e2202530119 (2022). <a href="https://doi.org/10.1073/pnas.2202530119">doi.org/10.1073/pnas.2202530119</a></li>
+          <li>Ghoneim, E. et al. <cite>Communications Earth &amp; Environment</cite> 5, 233 (2024). <a href="https://doi.org/10.1038/s43247-024-01379-7">doi.org/10.1038/s43247-024-01379-7</a></li>
+          <li>Segunda esfinge: episodio del 26 mar 2026, <cite>Matt Beall Limitless</cite>. <a href="https://podcasts.apple.com/gb/podcast/filippo-biondi-breaking-news-second-sphinx-found-under/id1712917413?i=1000757521953">Apple Podcasts</a>. Comprobación: <a href="https://www.miamiherald.com/living/article315261506.html">Miami Herald</a>.</li>
         </ol>
       </section>
 
@@ -577,12 +885,114 @@
         btn.setAttribute("aria-pressed", dark ? "true" : "false");
       }
       apply(saved);
+      initPlayers();
       btn.addEventListener("click", function () {
         var dark = root.getAttribute("data-theme") === "dark" || (root.getAttribute("data-theme") !== "light" && matchMedia("(prefers-color-scheme: dark)").matches);
         var next = dark ? "light" : "dark";
         apply(next);
         try { localStorage.setItem("tema", next); } catch (e) {}
       });
+      function initPlayers() {
+        var reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+        var timers = [];
+        function clearTimers() { timers.forEach(clearTimeout); timers = []; }
+        function later(fn, ms) {
+          if (reduced) { fn(); return; }
+          timers.push(setTimeout(fn, ms));
+        }
+        var khafre = document.getElementById("play-khafre");
+        var khufu = document.getElementById("play-khufu");
+        var method = document.getElementById("play-method");
+        function setLive(root, text) { root.querySelector(".live").textContent = text; }
+        function khafreFinal() {
+          clearTimers();
+          khafre.classList.add("is-final");
+          khafre.querySelector(".scanline").setAttribute("x", "360");
+          setLive(khafre, "Estado final: ocho pozos y dos cubos.");
+        }
+        function khafrePlay() {
+          clearTimers();
+          khafre.classList.remove("is-final");
+          var scan = khafre.querySelector(".scanline");
+          scan.setAttribute("x", "52");
+          setLive(khafre, "El barrido baja.");
+          var shafts = khafre.querySelectorAll(".shaft");
+          var spirals = khafre.querySelectorAll(".spiral");
+          var cubes = khafre.querySelectorAll(".cube");
+          shafts.forEach(function (n) { n.style.opacity = "0"; });
+          spirals.forEach(function (n) { n.style.opacity = "0"; });
+          cubes.forEach(function (n) { n.style.opacity = "0"; });
+          if (reduced) { khafreFinal(); return; }
+          var x0 = 52, x1 = 360, steps = 12;
+          for (var i = 1; i <= steps; i++) {
+            (function (i) {
+              later(function () { scan.setAttribute("x", String(x0 + (x1 - x0) * i / steps)); }, i * 90);
+            })(i);
+          }
+          shafts.forEach(function (n, i) {
+            later(function () {
+              n.style.opacity = "1";
+              setLive(khafre, "Pozo " + (i + 1) + " de 8.");
+            }, 1100 + i * 220);
+          });
+          later(function () {
+            spirals.forEach(function (n) { n.style.opacity = "1"; });
+            setLive(khafre, "Espirales alrededor de los pozos.");
+          }, 3000);
+          later(function () {
+            cubes.forEach(function (n) { n.style.opacity = "1"; });
+            khafre.classList.add("is-final");
+            setLive(khafre, "Dos cubos de unos 80 m, a 648 m.");
+          }, 3600);
+        }
+        khafre.querySelector("[data-act=play]").addEventListener("click", khafrePlay);
+        khafre.querySelector("[data-act=replay]").addEventListener("click", khafrePlay);
+        function khufuMode(claimed) {
+          clearTimers();
+          khufu.classList.toggle("is-final", claimed);
+          khufu.querySelector("[data-act=known]").setAttribute("aria-pressed", claimed ? "false" : "true");
+          khufu.querySelector("[data-act=claimed]").setAttribute("aria-pressed", claimed ? "true" : "false");
+          setLive(khufu, claimed
+            ? "Se ven las salas conocidas y, en discontinuo, lo nuevo del artículo retractado."
+            : "Solo las salas ya conocidas.");
+        }
+        khufu.querySelector("[data-act=known]").addEventListener("click", function () { khufuMode(false); });
+        khufu.querySelector("[data-act=claimed]").addEventListener("click", function () { khufuMode(true); });
+        khufu.querySelector("[data-act=play]").addEventListener("click", function () {
+          khufuMode(false);
+          if (reduced) { khufuMode(true); return; }
+          later(function () { khufuMode(true); }, 900);
+        });
+        var frames = method.querySelectorAll(".frame");
+        var captions = [
+          "Paso 1 de 5. Pasa el satélite.",
+          "Paso 2 de 5. Vuelve el eco.",
+          "Paso 3 de 5. Sub-aperturas Doppler.",
+          "Paso 4 de 5. Mapa de vibración.",
+          "Paso 5 de 5. Corte en color."
+        ];
+        var frame = frames.length - 1;
+        function showFrame(i) {
+          frame = (i + frames.length) % frames.length;
+          frames.forEach(function (svg, n) { svg.classList.toggle("on", n === frame); });
+          setLive(method, captions[frame]);
+        }
+        method.querySelector("[data-act=prev]").addEventListener("click", function () { clearTimers(); showFrame(frame - 1); });
+        method.querySelector("[data-act=next]").addEventListener("click", function () { clearTimers(); showFrame(frame + 1); });
+        method.querySelector("[data-act=play]").addEventListener("click", function () {
+          clearTimers();
+          showFrame(0);
+          if (reduced) { showFrame(frames.length - 1); return; }
+          for (var s = 1; s < frames.length; s++) {
+            (function (s) { later(function () { showFrame(s); }, s * 900); })(s);
+          }
+        });
+        if (reduced) {
+          khafreFinal();
+          khufuMode(true);
+          showFrame(frames.length - 1);
+        }
+      }
       var nodes = document.querySelectorAll(".reveal");
       if (!("IntersectionObserver" in window) || matchMedia("(prefers-reduced-motion: reduce)").matches) {
         nodes.forEach(function (n) { n.classList.add("in"); });
