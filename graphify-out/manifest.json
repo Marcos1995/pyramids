@@ -1,0 +1,68 @@
+{
+  ".cursor/agents/explorar.md": {
+    "mtime": 1790529918.8833907,
+    "seen": 1790531035.163312,
+    "ast_hash": "6e208cfe0f5f10ed1c52eca68a3e5a5f",
+    "semantic_hash": ""
+  },
+  ".cursor/agents/implementar.md": {
+    "mtime": 1790529918.8845303,
+    "seen": 1790531035.163312,
+    "ast_hash": "6e3d9911e1261b8a72f5b380803cc22d",
+    "semantic_hash": ""
+  },
+  ".cursor/skills/debug/SKILL.md": {
+    "mtime": 1790529918.8833907,
+    "seen": 1790531035.163312,
+    "ast_hash": "31fbb3729bb6c43bb61f8ab136ad9854",
+    "semantic_hash": ""
+  },
+  ".cursor/skills/decide/SKILL.md": {
+    "mtime": 1790529918.8814094,
+    "seen": 1790531035.163312,
+    "ast_hash": "9e203314572b0c2fc8de8eb1365563ae",
+    "semantic_hash": ""
+  },
+  ".cursor/skills/review/SKILL.md": {
+    "mtime": 1790529918.8814094,
+    "seen": 1790531035.163312,
+    "ast_hash": "d8fa8d4e21e3307fdd7d92d161d38bce",
+    "semantic_hash": ""
+  },
+  ".cursor/skills/verify/SKILL.md": {
+    "mtime": 1790529918.8823845,
+    "seen": 1790531035.163312,
+    "ast_hash": "3ebb042e1baf3773e53ac9a5a0c77574",
+    "semantic_hash": ""
+  },
+  ".cursor/skills/web-design/SKILL.md": {
+    "mtime": 1790529918.8823845,
+    "seen": 1790531035.163312,
+    "ast_hash": "ce763b7c4f8b386c4b0708934e1ce4f2",
+    "semantic_hash": ""
+  },
+  "AGENTS.md": {
+    "mtime": 1790529918.8845303,
+    "seen": 1790531035.163312,
+    "ast_hash": "d6347316491cb9b64d37fd66631612c9",
+    "semantic_hash": ""
+  },
+  "PROJECT.md": {
+    "mtime": 1790531015.807605,
+    "seen": 1790531035.163312,
+    "ast_hash": "70e718197d3ce2997b44939272d563b3",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1790531016.7923636,
+    "seen": 1790531035.163312,
+    "ast_hash": "26c047ca8125eff6d7f471a827c00494",
+    "semantic_hash": ""
+  },
+  "index.html": {
+    "mtime": 1790530970.4281824,
+    "seen": 1790531035.163312,
+    "ast_hash": "4e260057ffe34bca9fc05d37a7617ed6",
+    "semantic_hash": ""
+  }
+}

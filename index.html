@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Biondi y las pirámides — qué está publicado y qué no</title>
+  <meta name="description" content="Síntesis crítica, en español, del trabajo de Filippo Biondi sobre las pirámides de Giza: método SAR, afirmaciones, patentes, críticas y qué faltaría para comprobarlas.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400..700&family=Fraunces:opsz,wght@9..144,500..700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: light-dark(oklch(0.975 0.008 85), oklch(0.17 0.012 70));
+      --ink: light-dark(oklch(0.24 0.02 55), oklch(0.94 0.012 85));
+      --muted: light-dark(oklch(0.44 0.02 60), oklch(0.76 0.015 80));
+      --line: light-dark(oklch(0.88 0.012 80), oklch(0.32 0.012 70));
+      --surface: light-dark(oklch(0.995 0.004 90), oklch(0.22 0.012 70));
+      --accent: light-dark(oklch(0.46 0.11 42), oklch(0.74 0.1 58));
+      --accent-ink: light-dark(oklch(0.99 0.01 90), oklch(0.18 0.02 55));
+      --sand: light-dark(oklch(0.94 0.02 85), oklch(0.26 0.02 70));
+      --ok: light-dark(oklch(0.38 0.08 155), oklch(0.78 0.09 155));
+      --ok-bg: light-dark(oklch(0.94 0.03 155), oklch(0.28 0.04 155));
+      --warn: light-dark(oklch(0.42 0.09 75), oklch(0.82 0.1 85));
+      --warn-bg: light-dark(oklch(0.95 0.04 90), oklch(0.30 0.04 80));
+      --bad: light-dark(oklch(0.42 0.12 28), oklch(0.78 0.1 28));
+      --bad-bg: light-dark(oklch(0.95 0.025 28), oklch(0.30 0.04 28));
+      --radius: 14px;
+      --font: "Figtree", "Segoe UI", sans-serif;
+      --display: "Fraunces", "Iowan Old Style", Palatino, serif;
+      --space: clamp(1rem, 2vw, 1.5rem);
+    }
+    [data-theme="light"] { color-scheme: light; }
+    [data-theme="dark"] { color-scheme: dark; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--font);
+      font-size: 1.0625rem;
+      line-height: 1.6;
+      overflow-x: clip;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+    a { color: var(--accent); text-underline-offset: 0.18em; }
+    a:hover { text-decoration-thickness: 2px; }
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+    .skip {
+      position: absolute;
+      left: 1rem;
+      top: -4rem;
+      background: var(--ink);
+      color: var(--bg);
+      padding: 0.4rem 0.7rem;
+      z-index: 10;
+    }
+    .skip:focus { top: 0.6rem; }
+    .top {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.7rem 1rem;
+      background: color-mix(in oklch, var(--bg) 88%, transparent);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+    }
+    .mark {
+      font-family: var(--display);
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+      white-space: nowrap;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem 0.85rem;
+      font-size: 0.86rem;
+    }
+    nav a { color: var(--muted); text-decoration: none; }
+    nav a:hover { color: var(--ink); }
+    .theme {
+      margin-left: auto;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--ink);
+      border-radius: 999px;
+      padding: 0.35rem 0.75rem;
+      font: inherit;
+      font-size: 0.86rem;
+      cursor: pointer;
+    }
+    .theme:hover { border-color: var(--accent); }
+    .wrap { width: min(100% - 2rem, 72rem); margin-inline: auto; }
+    header.hero {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: clamp(1.5rem, 4vw, 3.5rem);
+      align-items: end;
+      padding: clamp(2.2rem, 6vw, 4.5rem) 0 2.5rem;
+    }
+    .kicker {
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 0.8rem;
+    }
+    h1, h2, h3 { font-family: var(--display); font-weight: 560; letter-spacing: -0.02em; line-height: 1.12; }
+    h1 { font-size: clamp(2.3rem, 5vw, 4.1rem); margin: 0 0 1rem; }
+    h2 { font-size: clamp(1.7rem, 3vw, 2.35rem); margin: 0 0 0.7rem; }
+    h3 { font-size: 1.15rem; margin: 0 0 0.35rem; }
+    .lede { font-size: 1.15rem; max-width: 42rem; margin: 0; color: var(--muted); }
+    .note {
+      margin-top: 1.2rem;
+      max-width: 42rem;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+    section { padding: 3.2rem 0; border-top: 1px solid var(--line); scroll-margin-top: 5.5rem; }
+    .js .reveal { opacity: 0; transform: translateY(10px); transition: opacity 280ms ease-out, transform 280ms ease-out; }
+    .js .reveal.in { opacity: 1; transform: none; }
+    .hero-fig { margin: 0; }
+    .hero-fig svg { width: 100%; height: auto; display: block; }
+    .hero-fig figcaption, figcaption { color: var(--muted); font-size: 0.84rem; margin-top: 0.45rem; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.85rem; }
+    .card, .stat, .miss {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1rem 1.05rem;
+    }
+    .stat b {
+      display: block;
+      font-family: var(--display);
+      font-size: 1.55rem;
+      letter-spacing: -0.02em;
+      font-weight: 560;
+    }
+    .stat span, .card p, .miss p { margin: 0.25rem 0 0; color: var(--muted); font-size: 0.95rem; }
+    .card p:first-of-type, .who p { max-width: 68ch; }
+    .timeline { display: grid; gap: 0; }
+    .tl {
+      display: grid;
+      grid-template-columns: 7.2rem 1fr;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-top: 1px solid var(--line);
+    }
+    .tl time { font-family: var(--display); color: var(--accent); }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.85rem 1rem;
+      margin-top: 1rem;
+    }
+    .step {
+      border-top: 2px solid var(--accent);
+      padding-top: 0.55rem;
+    }
+    .step strong { display: block; font-size: 0.92rem; }
+    .step span { color: var(--muted); font-size: 0.82rem; }
+    .pipe { width: 100%; height: auto; display: block; }
+    .scan { animation: sweep 9s ease-in-out infinite; }
+    @keyframes sweep { 50% { transform: translateX(372px); } }
+    .pulse {
+      offset-path: path("M 28 36 H 692");
+      offset-distance: 0%;
+      animation: travel 7.5s linear infinite;
+      fill: var(--accent);
+    }
+    @keyframes travel { to { offset-distance: 100%; } }
+    .schemes { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 1rem; }
+    .schemes svg, .pipe { background: var(--sand); border-radius: var(--radius); border: 1px solid var(--line); }
+    .claims { display: grid; gap: 0.55rem; }
+    .claim {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0.35rem 1rem;
+      align-items: start;
+      padding: 0.85rem 0;
+      border-top: 1px solid var(--line);
+    }
+    .claim p { margin: 0; max-width: 68ch; }
+    .claim small { grid-column: 1; color: var(--muted); }
+    .pill {
+      font-size: 0.75rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      border-radius: 999px;
+      padding: 0.25rem 0.55rem;
+      white-space: nowrap;
+      border: 1px solid var(--line);
+    }
+    .pill.ok { color: var(--ok); background: var(--ok-bg); }
+    .pill.warn { color: var(--warn); background: var(--warn-bg); }
+    .pill.bad { color: var(--bad); background: var(--bad-bg); }
+    .quotes { display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; }
+    blockquote {
+      margin: 0;
+      padding: 1rem;
+      border-left: 3px solid var(--accent);
+      background: var(--surface);
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+    blockquote p { margin: 0 0 0.45rem; }
+    blockquote footer { color: var(--muted); font-size: 0.86rem; }
+    ol.miss-list { margin: 0; padding: 0; list-style: none; display: grid; gap: 0.7rem; }
+    .miss { display: grid; grid-template-columns: auto 1fr; gap: 0.75rem; }
+    .n {
+      font-family: var(--display);
+      color: var(--accent);
+      font-size: 1.25rem;
+    }
+    .sources { columns: 2; gap: 1.5rem; padding-left: 1.1rem; }
+    .sources li { break-inside: avoid; margin: 0 0 0.7rem; }
+    .sources a { overflow-wrap: anywhere; }
+    footer.colophon { padding: 1.5rem 0 2.5rem; color: var(--muted); font-size: 0.88rem; border-top: 1px solid var(--line); }
+    @media (max-width: 980px) {
+      header.hero, .grid-2, .schemes, .quotes { grid-template-columns: 1fr; }
+      .grid-3 { grid-template-columns: 1fr 1fr; }
+      .sources { columns: 1; }
+    }
+    @media (max-width: 640px) {
+      .pipe text { display: none; }
+      section { scroll-margin-top: 8.5rem; }
+      .top { flex-wrap: wrap; }
+      .theme { margin-left: 0; }
+      .grid-3, .steps, .tl { grid-template-columns: 1fr; }
+      .claim { grid-template-columns: 1fr; }
+      h1 { font-size: clamp(2rem, 10vw, 2.6rem); }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <div class="top">
+    <a class="mark" href="#inicio">Biondi · Giza</a>
+    <nav aria-label="Secciones">
+      <a href="#quien">Quién</a>
+      <a href="#afirma">Afirmaciones</a>
+      <a href="#metodo">Método</a>
+      <a href="#imagenes">Imágenes</a>
+      <a href="#datos">Datos</a>
+      <a href="#patentes">Patentes</a>
+      <a href="#balance">Balance</a>
+      <a href="#criticas">Críticas</a>
+      <a href="#falta">Qué falta</a>
+      <a href="#fuentes">Fuentes</a>
+    </nav>
+    <button class="theme" type="button" id="theme" aria-pressed="false">Tema</button>
+  </div>
+
+  <main id="contenido">
+    <div class="wrap">
+      <header class="hero" id="inicio">
+        <div>
+          <p class="kicker">Síntesis crítica · 27 sep 2026</p>
+          <h1>Lo que Filippo Biondi dice haber visto dentro de las pirámides</h1>
+          <p class="lede">Una sola página para leer, en claro, qué publicó, qué anunció en rueda de prensa y qué sigue sin comprobarse. Los dibujos de esta página son esquemas propios: no son imágenes de radar.</p>
+          <p class="note">Nada de lo que sigue es un aval. Cada cifra lleva su fuente. Donde una fuente no existe, se dice.</p>
+        </div>
+        <figure class="hero-fig">
+          <svg viewBox="0 0 420 280" role="img" aria-labelledby="heroTitle heroDesc">
+            <title id="heroTitle">Esquema de una pirámide y un corte bajo el suelo</title>
+            <desc id="heroDesc">Silueta de pirámide sobre un corte del terreno. Una línea de barrido recorre la escena. No es un dato medido.</desc>
+            <rect width="420" height="280" fill="var(--sand)"/>
+            <path d="M40 168 H380" fill="none" stroke="var(--ink)" stroke-width="1.2"/>
+            <path d="M86 168 L210 46 L334 168 Z" fill="none" stroke="var(--ink)" stroke-width="1.6"/>
+            <path d="M148 168 V214 M272 168 V214" fill="none" stroke="var(--accent)" stroke-width="1.4" stroke-dasharray="3 3"/>
+            <rect x="132" y="228" width="52" height="28" fill="none" stroke="var(--accent)" stroke-width="1.4"/>
+            <rect x="236" y="228" width="52" height="28" fill="none" stroke="var(--accent)" stroke-width="1.4"/>
+            <path class="scan" d="M24 20 V260" fill="none" stroke="var(--accent)" stroke-width="1" opacity="0.7"/>
+            <text x="40" y="24" fill="var(--muted)" font-size="12" font-family="Figtree, sans-serif">esquema, no un tomograma</text>
+          </svg>
+          <figcaption>La línea que cruza es solo una animación. El corte de abajo alude a lo anunciado en 2025, no a una medida.</figcaption>
+        </figure>
+      </header>
+
+      <section id="quien" class="reveal">
+        <h2>Quién es Biondi</h2>
+        <div class="grid-2 who">
+          <div class="card">
+            <h3>Filippo Biondi</h3>
+            <p>Ingeniero de telecomunicaciones. En el artículo de 2022 figura en el Departamento de Ingeniería Electrónica y Eléctrica de la Universidad de Strathclyde (Glasgow), con correo de esa universidad y también <span lang="en">filippo.biondi@marina.difesa.it</span>. AFP escribió en abril de 2025 que ya no pertenecía a Strathclyde y que, según publicaciones suyas en LinkedIn, dirige la empresa privada HarmonicSAR.</p>
+            <p>Antes de las pirámides publicó, con otros autores, estimaciones de micro-movimiento por radar en barcos, en la presa de Mosul (IEEE JSTARS, 2020) y en puentes (Remote Sensing, 2020), y un mapa tomográfico del Vesubio (Remote Sensing, 2022).</p>
+          </div>
+          <div class="card">
+            <h3>Con quién firma el trabajo de Giza</h3>
+            <p><strong>Corrado Malanga</strong>, Departamento de Química y Química Industrial de la Universidad de Pisa. Su especialidad publicada es la química orgánica. AFP lo describe también ligado a la ufología.</p>
+            <p><strong>Armando Mei</strong>, en la rueda de prensa de 2025. AFP lo presenta como periodista e investigador independiente, autor de libros de arqueología alternativa.</p>
+            <p><strong>Nicole Ciccolo</strong> aparece en la cobertura como moderadora de la conferencia. Retraction Watch escribe el nombre como Nicola Ciccolo.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="afirma" class="reveal">
+        <h2>Qué afirma</h2>
+        <p>Hay dos momentos distintos. El primero llegó a una revista y luego fue retirado. El segundo, sobre Kefrén, no tiene artículo revisado.</p>
+        <div class="timeline">
+          <article class="tl">
+            <time datetime="2022-10">oct 2022</time>
+            <div>
+              <h3>Keops, en Remote Sensing</h3>
+              <p>Biondi y Malanga publican en <cite>Remote Sensing</cite> (MDPI), volumen 14, artículo 5231. Procesan imágenes <strong>staring spotlight</strong> de <strong>COSMO-SkyMed de segunda generación</strong>, polarización VV. Dicen que la pirámide se vuelve transparente en el dominio del micro-movimiento y reconstruyen el interior en 3D. Afirman ver las salas conocidas (cámara del rey, «zed» o cámaras de descarga, cámara de la reina, Gran Galería, gruta y cámara subterránea) y <strong>20 estructuras</strong> que numeran: rampas este y oeste de unos 42°, un corredor sur a unos 90 m de altura, corredores subterráneos, un complejo al norte, pasadizos junto al sarcófago y un «big void» en forma de paralelepípedo. También dicen que el InSAR muestra que Keops, Kefrén y Micerino tienen ocho caras, no cuatro.</p>
+            </div>
+          </article>
+          <article class="tl">
+            <time datetime="2025-03">mar 2025</time>
+            <div>
+              <h3>Proyecto Kefrén, rueda de prensa</h3>
+              <p>El abstract de la conferencia (fechado el 16 de marzo de 2025; AFP sitúa los vídeos en YouTube el 22 y 23 de marzo) habla de datos SAR abiertos de <strong>Capella Space y Umbra</strong>, no de COSMO-SkyMed. Afirman, bajo y dentro de Kefrén: cinco estructuras tipo «zed» (cinco niveles horizontales y cubierta inclinada) cerca de la base, unidas por pasillos; y <strong>ocho pozos cilíndricos huecos</strong>, en dos filas norte-sur, envueltos en rampas de espiral, que bajan hasta <strong>648 m</strong> y se unen a <strong>dos cubos de unos 80 m de lado</strong>. No aparece un artículo de revista que recoja ese anuncio.</p>
+            </div>
+          </article>
+          <article class="tl">
+            <time datetime="2026-08">ago 2026</time>
+            <div>
+              <h3>La revista retira el artículo de 2022</h3>
+              <p>El 10 de agosto de 2026 <cite>Remote Sensing</cite> retracta el trabajo de Keops. Un lector señaló problemas de método. La redacción confirmó «fallos metodológicos graves y errores estadísticos» que socavan las conclusiones. Biondi y Malanga no estaban de acuerdo con la retractación. El anuncio de Kefrén no forma parte de esa retractación: sigue sin publicarse.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="metodo" class="reveal">
+        <h2>Cómo dice que funciona</h2>
+        <p>En lenguaje llano, la cadena que describen el artículo de Keops, el del Vesubio y la solicitud de patente es esta. El pulso que se mueve no es un dato: marca el orden de los pasos.</p>
+        <svg class="pipe" viewBox="0 0 720 72" role="img" aria-label="Cadena: satélite, ecos, sub-aperturas Doppler, recorte de banda, mapas de vibración y modelo tridimensional">
+          <rect width="720" height="72" fill="var(--sand)"/>
+          <path d="M28 36 H692" fill="none" stroke="var(--line)" stroke-width="2"/>
+          <g fill="var(--ink)" font-family="Figtree, sans-serif" font-size="11">
+            <circle cx="28" cy="36" r="5"/><text x="16" y="58">Satélite</text>
+            <circle cx="160" cy="36" r="5"/><text x="142" y="58">Ecos</text>
+            <circle cx="292" cy="36" r="5"/><text x="248" y="58">Sub-aperturas</text>
+            <circle cx="424" cy="36" r="5"/><text x="390" y="58">Recorte</text>
+            <circle cx="556" cy="36" r="5"/><text x="518" y="58">Vibración</text>
+            <circle cx="692" cy="36" r="5"/><text x="656" y="58">Modelo</text>
+          </g>
+          <circle class="pulse" r="6" cy="0" cx="0"/>
+        </svg>
+        <div class="steps">
+          <div class="step"><strong>1. Satélite</strong><span>Un radar en órbita ilumina la escena. En 2022: COSMO-SkyMed, banda X.</span></div>
+          <div class="step"><strong>2. Ecos</strong><span>Se guarda una imagen compleja (SLC): amplitud y fase, no una foto.</span></div>
+          <div class="step"><strong>3. Sub-aperturas</strong><span>Se parte el espectro Doppler de esa única imagen en varios trozos más borrosos.</span></div>
+          <div class="step"><strong>4. Recorte de banda</strong><span>Dejan fuera la mitad de la banda Doppler. El «low-pass» con ese nombre no está escrito.</span></div>
+          <div class="step"><strong>5. Vibración</strong><span>Comparan píxeles entre trozos y estiman un desplazamiento minúsculo.</span></div>
+          <div class="step"><strong>6. Modelo</strong><span>Esos desplazamientos se enfocan en profundidad y se dibuja un corte o un 3D.</span></div>
+        </div>
+        <div class="grid-2" style="margin-top:1.2rem">
+          <div class="card">
+            <h3>La idea, sin fórmulas</h3>
+            <p>El propio artículo dice que las ondas del radar penetran mal en un sólido: la imagen normal solo ve la superficie. Su propuesta es indirecta. El suelo y la pirámide se mueven un poco por el ruido sísmico de fondo, el viento y la ciudad de El Cairo. Ese temblor, dicen, cambia la fase del eco. Si se mide, se puede tratar como una vibración y «enfocarla» hacia abajo, como si el interior sonara.</p>
+            <p>Para medirlo no usan muchas pasadas del satélite. Usan <em>una</em> imagen y la cortan en sub-aperturas Doppler: varias versiones de la misma toma, cada una con un trozo de la frecuencia azimutal. El seguimiento de píxeles entre esas versiones da el micro-movimiento. Luego una matriz de enfoque reparte esa señal en profundidad.</p>
+          </div>
+          <div class="card">
+            <h3>El «low-pass filter»</h3>
+            <p>Buscado en el artículo de Keops, en el del Vesubio y en las reivindicaciones de la solicitud WO2024008365A1, <strong>no hay una etapa llamada filtro paso bajo</strong> dentro de la tomografía.</p>
+            <p>Lo más cercano, y sí escrito, es otra cosa: el filtro adaptado con el que se enfoca la imagen radar, y la decisión de dejar sin procesar la mitad de la banda Doppler (<em>B<sub>DL</sub> = B<sub>CD</sub> / 2</em>) para ser sensibles al movimiento. En el Vesubio comparan un espectro de vibración «sin filtrar» y otro «filtrado» frente a sismógrafos del INGV, sin decir que ese filtro sea un paso bajo de la tomografía.</p>
+            <p>Un filtro paso bajo, si alguien lo aplicara aquí, dejaría las variaciones lentas y recortaría el ruido rápido de la serie de vibración o de la banda Doppler. Puede ser útil en un procesado genérico. <strong>No está documentado como paso de este método.</strong> La frase «filtro mecánico paso bajo tridimensional» del artículo de Keops cita un trabajo ajeno sobre materiales elásticos, no su cadena de radar.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="imagenes" class="reveal">
+        <h2>Qué imágenes y resultados muestra</h2>
+        <p>Los artículos muestran tomogramas en magnitud, franjas interferométricas y modelos CAD. Esas figuras son de la revista y no se incrustan aquí. Abajo hay recreaciones esquemáticas, a escala aproximada, de lo que <em>describen</em>. La etiqueta lo dice: no son datos.</p>
+        <div class="schemes">
+          <figure>
+            <svg viewBox="0 0 640 500" role="img" aria-labelledby="khafreT khafreD">
+              <title id="khafreT">Recreación esquemática del corte de Kefrén anunciado en 2025</title>
+              <desc id="khafreD">Pirámide pequeña sobre ocho pozos que bajan mucho más que la altura del monumento, hasta dos cubos. Recreación, no un radargrama.</desc>
+              <rect width="640" height="500" fill="var(--sand)"/>
+              <text x="20" y="28" fill="var(--ink)" font-family="Fraunces, serif" font-size="18">Kefrén · recreación esquemática</text>
+              <path d="M40 118 H600" stroke="var(--ink)" stroke-width="1.2" fill="none"/>
+              <path d="M250 118 L320 52 L390 118 Z" fill="none" stroke="var(--ink)" stroke-width="1.6"/>
+              <rect x="304" y="96" width="32" height="14" fill="none" stroke="var(--muted)" stroke-width="1"/>
+              <g fill="none" stroke="var(--accent)" stroke-width="1.2">
+                <path d="M150 118 v230"/><path d="M188 118 v255"/><path d="M226 118 v278"/><path d="M264 118 v292"/>
+                <path d="M376 118 v292"/><path d="M414 118 v278"/><path d="M452 118 v255"/><path d="M490 118 v230"/>
+                <path d="M154 150 h8 M154 185 h8 M154 220 h8 M154 255 h8"/>
+                <path d="M192 155 h8 M192 190 h8 M192 225 h8 M192 260 h8"/>
+                <path d="M230 160 h8 M230 195 h8 M230 230 h8 M230 265 h8"/>
+                <path d="M268 165 h8 M268 200 h8 M268 235 h8 M268 270 h8"/>
+                <path d="M380 165 h8 M380 200 h8 M380 235 h8 M380 270 h8"/>
+                <path d="M418 160 h8 M418 195 h8 M418 230 h8 M418 265 h8"/>
+                <path d="M456 155 h8 M456 190 h8 M456 225 h8 M456 260 h8"/>
+                <path d="M494 150 h8 M494 185 h8 M494 220 h8 M494 255 h8"/>
+              </g>
+              <rect x="140" y="418" width="140" height="62" fill="none" stroke="var(--accent)" stroke-width="1.6"/>
+              <rect x="360" y="418" width="140" height="62" fill="none" stroke="var(--accent)" stroke-width="1.6"/>
+            </svg>
+            <figcaption>Anuncio de marzo de 2025. Kefrén mide unos 136 m de alto; los pozos anunciados bajan 648 m, casi cinco veces más. Son ocho, en dos filas; las marcas laterales indican las espirales. Los cubos, unos 80 m de lado. No es una medida. Figuras originales: abstract de la conferencia, no un DOI de revista.</figcaption>
+          </figure>
+          <figure>
+            <svg viewBox="0 0 480 560" role="img" aria-labelledby="khufuT khufuD">
+              <title id="khufuT">Recreación esquemática de Keops: salas conocidas y rampas afirmadas</title>
+              <desc id="khufuD">Corte norte-sur de Keops. En trazo continuo, cámaras conocidas. En trazo discontinuo, rampas que el artículo retractado dice haber medido.</desc>
+              <rect width="480" height="560" fill="var(--sand)"/>
+              <text x="16" y="28" fill="var(--ink)" font-family="Fraunces, serif" font-size="18">Keops · conocido y afirmado</text>
+              <path d="M40 500 H440" stroke="var(--ink)" stroke-width="1.2"/>
+              <path d="M70 500 L240 80 L410 500 Z" fill="none" stroke="var(--ink)" stroke-width="1.6"/>
+              <g fill="none" stroke="var(--ink)" stroke-width="1.3">
+                <path d="M248 250 h46 v18 h-46 z"/>
+                <path d="M252 232 h38 M252 226 h38 M252 220 h38"/>
+                <path d="M230 300 l40 -28 h34"/>
+                <rect x="214" y="318" width="28" height="16"/>
+                <path d="M200 500 v-70 l40 -24"/>
+              </g>
+              <g fill="none" stroke="var(--accent)" stroke-width="1.3" stroke-dasharray="4 3">
+                <path d="M120 470 L200 250"/>
+                <path d="M360 470 L280 250"/>
+                <path d="M150 250 H330"/>
+              </g>
+              <text x="300" y="246" fill="var(--ink)" font-size="12" font-family="Figtree, sans-serif">rey + zed</text>
+              <text x="300" y="292" fill="var(--ink)" font-size="12" font-family="Figtree, sans-serif">galería</text>
+              <text x="250" y="332" fill="var(--ink)" font-size="12" font-family="Figtree, sans-serif">reina</text>
+              <text x="96" y="530" fill="var(--accent)" font-size="12" font-family="Figtree, sans-serif">trazo discontinuo: lo que el artículo da por nuevo</text>
+            </svg>
+            <figcaption>Continuo: cámaras ya conocidas. Discontinuo: rampas y corredor sur del artículo de 2022, retractado en 2026. Original: <a href="https://www.mdpi.com/2072-4292/14/20/5231">Remote Sensing 14, 5231</a>.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="datos" class="reveal">
+        <h2>Qué dicen sus datos</h2>
+        <p>Cifras tal como aparecen en las fuentes. Varias fórmulas del artículo de Keops no cierran entre sí: se copian las dos versiones, sin elegir una.</p>
+        <div class="grid-3">
+          <article class="stat"><b>COSMO-SkyMed</b><span>Segunda generación, modo staring spotlight, polarización VV. Constelación en banda X: 9,6 GHz, longitud de onda 3,1 cm.</span></article>
+          <article class="stat"><b>~0,92 m</b><span>Resolución tomográfica que calculan con v ≈ 6000 m/s. Escriben una frecuencia de 12 500 Hz y, en la misma cuenta, dividen por 25 000.</span></article>
+          <article class="stat"><b>1 m / píxel</b><span>Lo que asignan al tomograma de Keops: el eje horizontal sigue al radar; el vertical sale del enfoque «sónico».</span></article>
+          <article class="stat"><b>648 m</b><span>Profundidad de los ocho pozos bajo Kefrén, solo en el anuncio de 2025. Cubos de unos 80 m de lado.</span></article>
+          <article class="stat"><b>~3 km</b><span>Profundidad que el artículo del Vesubio dice alcanzar con una imagen spotlight. Doppler ~22,5 kHz, chirp ~450 MHz.</span></article>
+          <article class="stat"><b>0,1 m y 35 cm</b><span>Error que declaran entre el InSAR de una fachada y un LiDAR: «unos 0,1 m, con máximo de unos 35 cm». Es la forma exterior, no una cavidad.</span></article>
+        </div>
+        <p class="note">El artículo de Keops advierte que las medidas incluyen el espesor del material y que todavía no distinguen hueco de macizo. También dice que no ha corregido las reflexiones múltiples del «sonido», que podrían alterar el tomograma.</p>
+      </section>
+
+      <section id="patentes" class="reveal">
+        <h2>Patentes</h2>
+        <div class="card">
+          <p>Hay una solicitud internacional, no una patente concedida. <a href="https://patents.google.com/patent/WO2024008365A1/en">WO2024008365A1</a>, inventor Filippo Biondi, prioridad 4 de julio de 2022, solicitud PCT/EP2023/064345 presentada el 29 de mayo de 2023, publicada el 11 de enero de 2024. Título: radar de apertura sintética bajo tierra, bajo el mar y bajo el hielo. Describe la misma cadena: sub-aperturas chirp-Doppler, desplazamiento de píxel y compresión de pulso.</p>
+          <p>Google Patents marca el estado como <strong>Ceased</strong>. En el historial: el 5 de febrero de 2025, no entrada en fase nacional en Alemania; el 2 de julio de 2025, la solicitud PCT no entra en fase europea. A 27 de septiembre de 2026 no aparece una patente concedida y en vigor a nombre de Filippo Biondi para este método.</p>
+        </div>
+      </section>
+
+      <section id="balance" class="reveal">
+        <h2>Lo publicado, lo retirado y lo discutido</h2>
+        <div class="claims">
+          <article class="claim">
+            <p>Micro-movimiento de superficie en la presa de Mosul y en puentes, con sub-aperturas Doppler y datos de campo o InSAR de apoyo.</p>
+            <span class="pill ok">Publicado</span>
+            <small><a href="https://doi.org/10.1109/JSTARS.2020.3030977">IEEE JSTARS 2020</a> · <a href="https://www.mdpi.com/2072-4292/12/23/3852">Remote Sensing 2020</a>. Mide vibración de una estructura a la vista, no una ciudad bajo la roca.</small>
+          </article>
+          <article class="claim">
+            <p>Interior del Vesubio hasta unos 3 km: conductos y cámara magmática en una imagen COSMO-SkyMed.</p>
+            <span class="pill warn">Disputado</span>
+            <small><a href="https://www.mdpi.com/2072-4292/14/15/3828">Remote Sensing 2022, 3828</a>, no retractado en las fuentes de esta página. Una reproducción independiente de 2026 no recupera estructura profunda.</small>
+          </article>
+          <article class="claim">
+            <p>Interior nuevo de Keops: 20 estructuras, más las salas conocidas, y ocho caras en las tres pirámides.</p>
+            <span class="pill bad">Retractado</span>
+            <small><a href="https://www.mdpi.com/2072-4292/14/20/5231">Remote Sensing 14, 5231</a>. Retirado el 10 ago 2026 por fallos de método y errores estadísticos. Los autores discreparon.</small>
+          </article>
+          <article class="claim">
+            <p>Ocho pozos a 648 m y dos cubos de 80 m bajo Kefrén, vistos con Capella y Umbra.</p>
+            <span class="pill warn">No revisado</span>
+            <small>Abstract de conferencia, marzo 2025, y cobertura de AFP y Retraction Watch. Sin artículo de revista localizado.</small>
+          </article>
+          <article class="claim">
+            <p>El radar de un satélite en banda X ve cavidades a cientos de metros dentro de la caliza.</p>
+            <span class="pill bad">Contradicho</span>
+            <small>El propio artículo admite la poca penetración electromagnética. Conyers, Hawass y Parcak rechazan el salto a esa profundidad. Ver críticas.</small>
+          </article>
+          <article class="claim">
+            <p>Ejemplo ajeno de cómo se comprueba un hueco: el Gran Vacío (2017) y el corredor de la cara norte (2023), por muones.</p>
+            <span class="pill ok">Verificado</span>
+            <small><a href="https://www.nature.com/articles/nature24647">Nature 2017</a> · <a href="https://www.nature.com/articles/s41467-023-36351-0">Nature Communications 2023</a>. Tres técnicas de muones; el corredor, además, con radar de tierra, ultrasonidos y endoscopio.</small>
+          </article>
+        </div>
+      </section>
+
+      <section id="criticas" class="reveal">
+        <h2>Críticas</h2>
+        <div class="quotes">
+          <blockquote>
+            <p>«Las ondas de radar se atenúan poco a poco en el suelo. Es imposible llegar a esa profundidad con esta técnica.»</p>
+            <footer>Lawrence B. Conyers, radar de suelo, Universidad de Denver, a AFP (abril 2025). A Retraction Watch añadió que un radar solo mide lo que «ve» y que esas micro-vibraciones quedan por debajo de lo detectable desde un satélite. Dijo haber desaconsejado publicar el artículo de 2022 si no lo revisaba alguien capaz de seguir las ecuaciones.</footer>
+          </blockquote>
+          <blockquote>
+            <p>«Los rumores sobre columnas bajo la pirámide de Kefrén no son más que fabricaciones.»</p>
+            <footer>Zahi Hawass, 26 de marzo de 2025, citado por AFP. Añadió que no había misiones con radar dentro de Kefrén ni permiso del Consejo de Antigüedades para ese estudio.</footer>
+          </blockquote>
+          <blockquote>
+            <p>«El radar de apertura única no ve a través de la roca. Punto.»</p>
+            <footer>Sarah Parcak, arqueóloga, Universidad de Alabama en Birmingham, citada por Retraction Watch. Sostiene que, con suficiente procesado, una imagen de satélite puede parecer casi cualquier cosa.</footer>
+          </blockquote>
+          <blockquote>
+            <p>Biondi respondió a AFP, el 22 de abril de 2025, que «imposible» no cabe cuando aparece «evidencia objetiva» y que los datos de satélite indican estructuras artificiales de una civilización desconocida.</p>
+            <footer>Esa respuesta no va acompañada, en las fuentes consultadas, de datos abiertos ni de un artículo nuevo.</footer>
+          </blockquote>
+        </div>
+        <div class="card" style="margin-top:0.85rem">
+          <h3>El límite físico, en números de otros trabajos</h3>
+          <p>COSMO-SkyMed emite en banda X, 9,6 GHz, longitud de onda 3,1 cm. En arena seca del desierto, la literatura de prospección arqueológica cita penetraciones del orden de 0,05–0,3 m en banda X y 0,1–0,5 m en banda C, frente a 0,4–2 m en banda L. No son cientos de metros de caliza. National Geographic resumió el tope práctico del SAR, en condiciones parecidas, en unos dos metros, y señaló que los dibujos 3D se apartan mucho de las manchas del radar.</p>
+          <p>En julio de 2026, Hassan Foreman publicó una reproducción con controles (código abierto, datos Umbra y Capella, no los COSMO-SkyMed originales). Concluye que la matriz de enfoque de la patente es, por su propio texto, una transformada de Fourier, que devuelve estructura con casi cualquier entrada, y que las profundidades salen de una frecuencia de investigación físicamente implausible, del orden de 22 kHz. En sitios con subsuelo conocido el método no supera sus pruebas nulas. Es un preprint independiente, no una sentencia de un tribunal ni la retractación de la revista. La retractación de <cite>Remote Sensing</cite> es un hecho editorial aparte: fallos de método y errores estadísticos, sin detallar qué ecuación falló.</p>
+        </div>
+      </section>
+
+      <section id="falta" class="reveal">
+        <h2>Qué falta para que sea creíble</h2>
+        <p>Comprobar no es creer ni negar por principio. Es poder repetir el número. Hoy falta esto:</p>
+        <ol class="miss-list">
+          <li class="miss"><span class="n">1</span><div><h3>Revisión del anuncio de Kefrén</h3><p>Un artículo con métodos, errores e imágenes, leído por gente que pueda seguir la matemática y la física del radar. La retractación de 2026 no cubre esas afirmaciones porque nunca entraron en una revista.</p></div></li>
+          <li class="miss"><span class="n">2</span><div><h3>Datos y código abiertos</h3><p>Las escenas COSMO-SkyMed, Capella y Umbra usadas, los parámetros (número de sub-aperturas, bandas, velocidad sísmica) y el programa que pasa de la imagen SLC al tomograma. Sin eso, el dibujo no se puede auditar.</p></div></li>
+          <li class="miss"><span class="n">3</span><div><h3>La misma escena, otro grupo</h3><p>Una réplica independiente con los mismos productos COSMO-SkyMed de Keops, no solo con otros satélites en otros sitios. Foreman usó Umbra y Capella; el hueco de los datos originales sigue abierto.</p></div></li>
+          <li class="miss"><span class="n">4</span><div><h3>Prueba ciega en huecos conocidos</h3><p>Entregar la imagen sin decir qué pirámide es, y recuperar la cámara del rey, la de la reina y la Gran Galería en su sitio y con su tamaño, antes de anunciar nada nuevo. El artículo de 2022 muestra las salas conocidas después de saber dónde están.</p></div></li>
+          <li class="miss"><span class="n">5</span><div><h3>Verdad de terreno</h3><p>Georradar, tomografía eléctrica, sísmica pasiva, muografía o un sondeo, en un punto concreto que el modelo señale. ScanPyramids hizo ese camino: muones, luego radar y ultrasonidos, luego un endoscopio.</p></div></li>
+          <li class="miss"><span class="n">6</span><div><h3>Cruce con ScanPyramids</h3><p>El Gran Vacío mide más de 30 m, con sección parecida a la Gran Galería, por encima de ella. El corredor norte mide unos 9 m, con sección de unos 2 m × 2 m. Un método nuevo tendría que colocarlos donde ya están, no solo dibujar un «big void» genérico.</p></div></li>
+          <li class="miss"><span class="n">7</span><div><h3>Barras de error y resolución</h3><p>Una cuenta de resolución que no mezcle 12 500 Hz con un divisor de 25 000, con una velocidad sísmica justificada para la caliza de Giza, y con el efecto de cambiar el número de sub-aperturas. Si el dibujo se mueve al cambiar un parámetro libre, no es una medida.</p></div></li>
+          <li class="miss"><span class="n">8</span><div><h3>La física de la penetración</h3><p>Explicar, con un balance de energía, cómo un eco en banda X (3,1 cm) vuelve de 648 m de roca, o cómo una vibración de milímetros por segundo, vista en una pasada de segundos, se convierte en un mapa a esa profundidad. Mientras esa cuenta no exista, el esquema de los pozos es una hipótesis de prensa.</p></div></li>
+        </ol>
+      </section>
+
+      <section id="fuentes" class="reveal">
+        <h2>Fuentes</h2>
+        <ol class="sources">
+          <li>Biondi, F. y Malanga, C. <cite>Remote Sensing</cite> 2022, 14, 5231. Artículo retractado el 10 ago 2026. <a href="https://www.mdpi.com/2072-4292/14/20/5231">mdpi.com/2072-4292/14/20/5231</a> · preprint <a href="https://arxiv.org/abs/2208.00811">arXiv:2208.00811</a></li>
+          <li>Retraction Watch, 31 ago 2026. <a href="https://retractionwatch.com/2026/08/31/retraction-corridors-inside-great-pyramid-giza/">retractionwatch.com</a></li>
+          <li>Biondi, F. Vesubio. <cite>Remote Sensing</cite> 2022, 14, 3828. <a href="https://www.mdpi.com/2072-4292/14/15/3828">mdpi.com/2072-4292/14/15/3828</a></li>
+          <li>Biondi et al., presa de Mosul. IEEE JSTARS 2020. <a href="https://doi.org/10.1109/JSTARS.2020.3030977">doi.org/10.1109/JSTARS.2020.3030977</a></li>
+          <li>Biondi et al., puentes. <cite>Remote Sensing</cite> 2020, 12, 3852. <a href="https://www.mdpi.com/2072-4292/12/23/3852">mdpi.com/2072-4292/12/23/3852</a></li>
+          <li>Abstract de la conferencia del 16 mar 2025 (copia PDF circulada). <a href="https://fightingmonarch.com/wp-content/uploads/2025/04/official-khafre-project-press-release.pdf">PDF del abstract</a></li>
+          <li>AFP Fact Check, 23 abr 2025. <a href="https://factcheck.afp.com/doc.afp.com.42LQ7G3">factcheck.afp.com/doc.afp.com.42LQ7G3</a></li>
+          <li>National Geographic, ciudad secreta bajo Giza. <a href="https://www.nationalgeographic.com/history/article/is-there-a-secret-city-under-the-pyramids-">nationalgeographic.com</a></li>
+          <li>Skeptic, estructuras subterráneas en Giza. <a href="https://www.skeptic.com/article/underground-structures-in-giza/">skeptic.com</a></li>
+          <li>Solicitud WO2024008365A1, estado Ceased. <a href="https://patents.google.com/patent/WO2024008365A1/en">patents.google.com</a></li>
+          <li>COSMO-SkyMed, banda X 9,6 GHz, λ = 3,1 cm. <a href="https://www.eoportal.org/satellite-missions/cosmo-skymed">eoPortal</a></li>
+          <li>Morishima et al., Gran Vacío. <cite>Nature</cite> 2017. <a href="https://www.nature.com/articles/nature24647">nature.com/articles/nature24647</a></li>
+          <li>Procureur, Morishima et al., corredor norte. <cite>Nature Communications</cite> 2023. <a href="https://www.nature.com/articles/s41467-023-36351-0">nature.com/articles/s41467-023-36351-0</a></li>
+          <li>Foreman, H. Reproducción y refutación, 2026. <a href="https://github.com/Hassanforeman/subsurface-sar-tomo">github.com/Hassanforeman/subsurface-sar-tomo</a></li>
+          <li>Penetración en arena: órdenes 0,05–0,3 m (X) y 0,1–0,5 m (C), citados en la prospección de ‘Uqdat al-Bakrah a partir de Schaber y trabajos posteriores.</li>
+        </ol>
+      </section>
+
+      <footer class="colophon">
+        <p>Página estática de síntesis. No usa datos de pago ni imágenes ajenas incrustadas. Actualizada con fuentes públicas hasta el 27 de septiembre de 2026.</p>
+      </footer>
+    </div>
+  </main>
+  <script>
+    (function () {
+      var root = document.documentElement;
+      root.classList.add("js");
+      var btn = document.getElementById("theme");
+      var saved = null;
+      try { saved = localStorage.getItem("tema"); } catch (e) {}
+      function apply(mode) {
+        if (mode === "light" || mode === "dark") root.setAttribute("data-theme", mode);
+        else root.removeAttribute("data-theme");
+        var dark = mode === "dark" || (mode !== "light" && matchMedia("(prefers-color-scheme: dark)").matches);
+        btn.textContent = dark ? "Claro" : "Oscuro";
+        btn.setAttribute("aria-pressed", dark ? "true" : "false");
+      }
+      apply(saved);
+      btn.addEventListener("click", function () {
+        var dark = root.getAttribute("data-theme") === "dark" || (root.getAttribute("data-theme") !== "light" && matchMedia("(prefers-color-scheme: dark)").matches);
+        var next = dark ? "light" : "dark";
+        apply(next);
+        try { localStorage.setItem("tema", next); } catch (e) {}
+      });
+      var nodes = document.querySelectorAll(".reveal");
+      if (!("IntersectionObserver" in window) || matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        nodes.forEach(function (n) { n.classList.add("in"); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) {
+            en.target.classList.add("in");
+            io.unobserve(en.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      nodes.forEach(function (n) { io.observe(n); });
+    })();
+  </script>
+</body>
+</html>
