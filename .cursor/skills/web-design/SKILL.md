@@ -15,7 +15,8 @@ Stitch (MCP `stitch`, Gemini) designs; you do not design from scratch.
 
 ## Steps
 
-1. New page or full restyle: `create_project` once (reuse the project id from `DESIGN.md`), then `generate_screen_from_text` with purpose, real content, the `DESIGN.md` style and `deviceType` (`DESKTOP`; `MOBILE` if mobile-first). Changes to an existing screen: `edit_screens`.
+1. New page or full restyle: `create_project` once (reuse the project id from `DESIGN.md`; only this repo's project), then `generate_screen_from_text` with purpose, real content, the `DESIGN.md` style and `deviceType: MOBILE`. Always mobile-first, one screen: the prompt must say the same layout starts at 360px and scales to tablet (768) and desktop (1280+). Do not generate extra DESKTOP, TABLET or AGNOSTIC screens. Changes to an existing screen: `edit_screens` with the same rule.
+   Generate/edit/variants always through `stitch_long` (`tool` + its normal `arguments`), never directly: direct calls die at 60 s and Stitch needs 1-4 min. If it returns `status: running`, call `stitch_wait(job)` again until the result arrives. Only over 10 min is something wrong: report FALLO.
 2. `get_screen`: download its HTML and screenshot. Keep layout, palette and type; adapt to the repo stack (static: one HTML + CSS, no build; React: Tailwind v4 + shadcn/ui). No unused CSS/JS, real text.
 3. Write the project/screen ids in `DESIGN.md`.
 4. Small tweaks (a button, a color, spacing): edit directly, no Stitch.

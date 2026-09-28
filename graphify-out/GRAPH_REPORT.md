@@ -1,7 +1,7 @@
 # Graph Report - pyramids  (2026-09-28)
 
 ## Corpus Check
-- 11 files · ~10,244 words
+- 11 files · ~10,305 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 2 file(s) not represented in the graph (top: .mdc 2)
 
@@ -11,7 +11,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `5a617c5d`
+- Built from commit: `e78565ee`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 

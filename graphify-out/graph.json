@@ -117,7 +117,7 @@
       "node_kind": "heading",
       "norm_label": "before hecho",
       "source_file": ".cursor/skills/web-design/SKILL.md",
-      "source_location": "L24"
+      "source_location": "L25"
     },
     {
       "id": "cursor_skills_web_design_skill_steps",
@@ -815,7 +815,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": ".cursor/skills/web-design/SKILL.md",
-      "source_location": "L24",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -930,5 +930,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "5a617c5d178fbfb6ad072d113e18ab631e0cefdb"
+  "built_at_commit": "e78565ee4c57d5228b423736407d4c9c22d2137b"
 }

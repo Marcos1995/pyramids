@@ -1,11 +1,11 @@
 # Diseño
 
-Minimal y moderno, estilo estudio editorial. Mucho aire, jerarquía clara, un solo acento arcilla (`#8C4A2F`) usado con mesura. Fondo papel (`#F7F4EF`), tinta (`#1C1917`), filetes finos (`#E7E2DA`). Titulares en Newsreader, texto en Public Sans. Nada de degradados, morados, sombras fuertes, emojis, fotos de stock ni composición centrada. Página de lectura larga, alineada a la izquierda. Claro y oscuro con la misma estructura.
+Minimal y claro. Una columna de lectura (~62ch), mucho aire, sin cajas. Fondo papel (`#F6F3EE`), tinta (`#1A1814`), un solo acento oliva (`#3F5C4B`). Filetes (`#E3DDD4`). Titulares Newsreader en peso ligero, texto Public Sans a 18px. Nada de degradados, morados, sombras, emojis ni fotos. Claro y oscuro con la misma estructura.
 
-El texto muted de la pantalla de Stitch (`#78716C`) no llega a WCAG AA sobre el papel; en la página es `#5C564E`.
+El muted de Stitch (`#6E6A62`) queda justo en el límite AA; en la página es `#5C5852`.
 
 ## Stitch
 
 - Proyecto: `580108206377368739`
 - Sistema: `assets/3796481061844307200` (Pirámides editorial)
-- Pantalla: `9707cdb4d1a6477c8e5828264a36b921` (escritorio, «Biondi · Giza — Síntesis Crítica»)
+- Pantalla: `51b8bc32d8b64f25aa14681394f6f053` (escritorio, «Biondi · Giza — Síntesis Crítica (Minimal 1280w)»)
