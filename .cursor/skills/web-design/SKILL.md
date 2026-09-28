@@ -1,39 +1,26 @@
 ---
 name: web-design
-description: Modern, minimal, beautiful web UI. Use whenever creating or restyling any page, landing, dashboard or component (HTML/CSS/JSX), or when asked for "diseño", "web bonita", "UI", "landing".
+description: Any page, landing, dashboard or component (HTML/CSS/JSX), or "diseño", "web bonita", "UI", "landing". Google Stitch designs, you integrate.
 ---
 
 # Web design
 
-Goal: looks like a current product from a good studio: minimal, confident, polished. Never a generic "AI template".
+Stitch (MCP `stitch`, Gemini) designs; you do not design from scratch.
 
-## 1. Direction first
+## Style = `DESIGN.md`
 
-- Before code, state in 1 line: purpose, audience, one aesthetic direction (editorial minimal, Swiss grid, soft tech, warm neutral...) and one memorable detail. Commit to it.
-- If the repo already has a design source (Google Stitch or Figma export, `DESIGN.md`, existing tokens/components), follow it instead of inventing.
+- The repo's `DESIGN.md` holds the style and the Stitch ids. Missing: create it with this default and the user's wishes on top:
+  `Minimal y moderno, estilo estudio actual. Mucho aire, jerarquía clara, 1 color de acento, tipografía con carácter. Claro y oscuro. Nada de degradados morados, emojis como iconos, todo centrado ni plantillas genéricas.`
+- Existing design (Stitch/Figma export, tokens, components): follow it.
 
-## 2. Stack (match the repo, add nothing unneeded)
+## Steps
 
-- Static / `index.html`: one HTML + modern CSS, no framework, no build. Max 2 font families (Google Fonts / Fontsource, `display=swap`). Icons: inline SVG (Lucide).
-- React / Next / Vite: Tailwind v4 + shadcn/ui + `lucide-react`. Motion via CSS; `motion` lib only if CSS can't.
-- 3D: not by default. Only for visual/spatial products or when asked: one lazy-loaded hero (Spline embed or three.js) with static fallback.
+1. New page or full restyle: `create_project` once (reuse the project id from `DESIGN.md`), then `generate_screen_from_text` with purpose, real content, the `DESIGN.md` style and `deviceType` (`DESKTOP`; `MOBILE` if mobile-first). Changes to an existing screen: `edit_screens`.
+2. `get_screen`: download its HTML and screenshot. Keep layout, palette and type; adapt to the repo stack (static: one HTML + CSS, no build; React: Tailwind v4 + shadcn/ui). No unused CSS/JS, real text.
+3. Write the project/screen ids in `DESIGN.md`.
+4. Small tweaks (a button, a color, spacing): edit directly, no Stitch.
+5. Stitch missing or failing: hand-build following `DESIGN.md`.
 
-## 3. System
+## Before HECHO
 
-- Tokens as CSS vars in `:root`: colors in `oklch()`, `color-scheme: light dark` + `light-dark()`, one neutral scale + one accent.
-- Type: distinctive display font + clean text font (not Inter/Roboto/Arial alone). Fluid sizes with `clamp()`, headings tight (`letter-spacing: -0.02em`), body 16-18px, `line-height` 1.5-1.6, max 70ch.
-- Layout: CSS grid, container queries, `width: min(100% - 2rem, 72rem)`. 4/8px spacing scale, generous whitespace, clear hierarchy.
-- Surfaces: 1px low-contrast borders over heavy shadows, one consistent radius. At most one effect (grain, soft gradient, glass), used sparingly.
-- Motion: 150-300ms ease-out, subtle reveals (scroll-driven animations, View Transitions). Always honor `prefers-reduced-motion`.
-
-## 4. Avoid
-
-Purple-to-blue gradients on white, emoji as icons, everything centered, identical 3-card grids, "Welcome to X" heroes, lorem ipsum, shadows everywhere, more than one accent color.
-
-## 5. Quality bar (before HECHO)
-
-- Responsive 360px to 1440px, no horizontal scroll.
-- WCAG AA contrast, visible `:focus-visible`, semantic HTML, `alt` on images.
-- Real hover/active/empty/loading states on interactive parts.
-- Fast: no unused libs, images with `width`/`height` + `loading="lazy"`.
-- Look at it: skill `verify` (screenshots mobile/desktop, light/dark).
+Responsive 360-1440px without horizontal scroll, WCAG AA contrast, visible focus, `alt` on images, `prefers-reduced-motion`. Look at it with skill `verify`.

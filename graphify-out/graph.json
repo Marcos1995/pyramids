@@ -100,7 +100,7 @@
       "file_type": "document",
       "frontmatter": {
         "name": "web-design",
-        "description": "Modern, minimal, beautiful web UI. Use whenever creating or restyling any page, landing, dashboard or component (HTML/CSS/JSX), or when asked for &quot;dise\u00f1o&quot;, &quot;web bonita&quot;, &quot;UI&quot;, &quot;landing&quot;."
+        "description": "Any page, landing, dashboard or component (HTML/CSS/JSX), or &quot;dise\u00f1o&quot;, &quot;web bonita&quot;, &quot;UI&quot;, &quot;landing&quot;. Google Stitch designs, you integrate."
       },
       "node_kind": "page",
       "norm_label": "web-design/skill.md",
@@ -108,64 +108,40 @@
       "source_location": "L1"
     },
     {
-      "id": "cursor_skills_web_design_skill_1_direction_first",
-      "label": "1. Direction first",
+      "id": "cursor_skills_web_design_skill_before_hecho",
+      "label": "Before HECHO",
       "_origin": "ast",
       "community": 1,
       "community_name": "Web design",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "1. direction first",
+      "norm_label": "before hecho",
+      "source_file": ".cursor/skills/web-design/SKILL.md",
+      "source_location": "L24"
+    },
+    {
+      "id": "cursor_skills_web_design_skill_steps",
+      "label": "Steps",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "Web design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "steps",
+      "source_file": ".cursor/skills/web-design/SKILL.md",
+      "source_location": "L16"
+    },
+    {
+      "id": "cursor_skills_web_design_skill_style_design_md",
+      "label": "Style = `DESIGN.md`",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "Web design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "style = `design.md`",
       "source_file": ".cursor/skills/web-design/SKILL.md",
       "source_location": "L10"
-    },
-    {
-      "id": "cursor_skills_web_design_skill_2_stack_match_the_repo_add_nothing_unneeded",
-      "label": "2. Stack (match the repo, add nothing unneeded)",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "Web design",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "2. stack (match the repo, add nothing unneeded)",
-      "source_file": ".cursor/skills/web-design/SKILL.md",
-      "source_location": "L15"
-    },
-    {
-      "id": "cursor_skills_web_design_skill_3_system",
-      "label": "3. System",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "Web design",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "3. system",
-      "source_file": ".cursor/skills/web-design/SKILL.md",
-      "source_location": "L21"
-    },
-    {
-      "id": "cursor_skills_web_design_skill_4_avoid",
-      "label": "4. Avoid",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "Web design",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "4. avoid",
-      "source_file": ".cursor/skills/web-design/SKILL.md",
-      "source_location": "L29"
-    },
-    {
-      "id": "cursor_skills_web_design_skill_5_quality_bar_before_hecho",
-      "label": "5. Quality bar (before HECHO)",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "Web design",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "5. quality bar (before hecho)",
-      "source_file": ".cursor/skills/web-design/SKILL.md",
-      "source_location": "L33"
     },
     {
       "id": "cursor_skills_web_design_skill_web_design",
@@ -178,6 +154,42 @@
       "norm_label": "web design",
       "source_file": ".cursor/skills/web-design/SKILL.md",
       "source_location": "L6"
+    },
+    {
+      "id": "design",
+      "label": "DESIGN.md",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Dise\u00f1o",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "design.md",
+      "source_file": "DESIGN.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "design_dise\u00f1o",
+      "label": "Dise\u00f1o",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Dise\u00f1o",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "diseno",
+      "source_file": "DESIGN.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "design_stitch",
+      "label": "Stitch",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Dise\u00f1o",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "stitch",
+      "source_file": "DESIGN.md",
+      "source_location": "L7"
     },
     {
       "id": "project",
@@ -376,55 +388,55 @@
       "source_location": "L4"
     },
     {
-      "id": "cursor_skills_decide_skill",
-      "label": "decide/SKILL.md",
+      "id": "cursor_skills_laya_skill",
+      "label": "laya/SKILL.md",
       "_origin": "ast",
       "community": 5,
-      "community_name": "Decide",
+      "community_name": "Laya",
       "file_type": "document",
       "frontmatter": {
-        "name": "decide",
-        "description": "Scored decision for non-trivial choices (stack, library, data model, architecture, scope) or &quot;qu\u00e9 es mejor&quot;/&quot;decide&quot;. Logs one line in docs/DECISIONES.md."
+        "name": "laya",
+        "description": "Non-trivial choice (stack, library, data model, architecture, scope) or &quot;qu\u00e9 es mejor&quot;/&quot;decide&quot;. The local Laya model picks the option, not you. Logs one line in docs/DECISIONES.md."
       },
       "node_kind": "page",
-      "norm_label": "decide/skill.md",
-      "source_file": ".cursor/skills/decide/SKILL.md",
+      "norm_label": "laya/skill.md",
+      "source_file": ".cursor/skills/laya/SKILL.md",
       "source_location": "L1"
     },
     {
-      "id": "cursor_skills_decide_skill_decide",
-      "label": "Decide",
+      "id": "cursor_skills_laya_skill_laya",
+      "label": "Laya",
       "_origin": "ast",
       "community": 5,
-      "community_name": "Decide",
+      "community_name": "Laya",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "decide",
-      "source_file": ".cursor/skills/decide/SKILL.md",
+      "norm_label": "laya",
+      "source_file": ".cursor/skills/laya/SKILL.md",
       "source_location": "L6"
     },
     {
-      "id": "cursor_skills_decide_skill_reply_decision_only_requests",
+      "id": "cursor_skills_laya_skill_reply_decision_only_requests",
       "label": "Reply (decision-only requests)",
       "_origin": "ast",
       "community": 5,
-      "community_name": "Decide",
+      "community_name": "Laya",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "reply (decision-only requests)",
-      "source_file": ".cursor/skills/decide/SKILL.md",
+      "source_file": ".cursor/skills/laya/SKILL.md",
       "source_location": "L25"
     },
     {
-      "id": "cursor_skills_decide_skill_steps",
+      "id": "cursor_skills_laya_skill_steps",
       "label": "Steps",
       "_origin": "ast",
       "community": 5,
-      "community_name": "Decide",
+      "community_name": "Laya",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "steps",
-      "source_file": ".cursor/skills/decide/SKILL.md",
+      "source_file": ".cursor/skills/laya/SKILL.md",
       "source_location": "L10"
     },
     {
@@ -653,35 +665,35 @@
       "weight": 1.0
     },
     {
-      "source": "cursor_skills_decide_skill",
-      "target": "cursor_skills_decide_skill_decide",
+      "source": "cursor_skills_laya_skill",
+      "target": "cursor_skills_laya_skill_laya",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": ".cursor/skills/decide/SKILL.md",
+      "source_file": ".cursor/skills/laya/SKILL.md",
       "source_location": "L6",
       "weight": 1.0
     },
     {
-      "source": "cursor_skills_decide_skill_decide",
-      "target": "cursor_skills_decide_skill_steps",
+      "source": "cursor_skills_laya_skill_laya",
+      "target": "cursor_skills_laya_skill_steps",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": ".cursor/skills/decide/SKILL.md",
+      "source_file": ".cursor/skills/laya/SKILL.md",
       "source_location": "L10",
       "weight": 1.0
     },
     {
-      "source": "cursor_skills_decide_skill_decide",
-      "target": "cursor_skills_decide_skill_reply_decision_only_requests",
+      "source": "cursor_skills_laya_skill_laya",
+      "target": "cursor_skills_laya_skill_reply_decision_only_requests",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": ".cursor/skills/decide/SKILL.md",
+      "source_file": ".cursor/skills/laya/SKILL.md",
       "source_location": "L25",
       "weight": 1.0
     },
@@ -775,7 +787,7 @@
     },
     {
       "source": "cursor_skills_web_design_skill_web_design",
-      "target": "cursor_skills_web_design_skill_1_direction_first",
+      "target": "cursor_skills_web_design_skill_style_design_md",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -786,46 +798,46 @@
     },
     {
       "source": "cursor_skills_web_design_skill_web_design",
-      "target": "cursor_skills_web_design_skill_2_stack_match_the_repo_add_nothing_unneeded",
+      "target": "cursor_skills_web_design_skill_steps",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": ".cursor/skills/web-design/SKILL.md",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
       "source": "cursor_skills_web_design_skill_web_design",
-      "target": "cursor_skills_web_design_skill_3_system",
+      "target": "cursor_skills_web_design_skill_before_hecho",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": ".cursor/skills/web-design/SKILL.md",
-      "source_location": "L21",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
-      "source": "cursor_skills_web_design_skill_web_design",
-      "target": "cursor_skills_web_design_skill_4_avoid",
+      "source": "design",
+      "target": "design_dise\u00f1o",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": ".cursor/skills/web-design/SKILL.md",
-      "source_location": "L29",
+      "source_file": "DESIGN.md",
+      "source_location": "L1",
       "weight": 1.0
     },
     {
-      "source": "cursor_skills_web_design_skill_web_design",
-      "target": "cursor_skills_web_design_skill_5_quality_bar_before_hecho",
+      "source": "design_dise\u00f1o",
+      "target": "design_stitch",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": ".cursor/skills/web-design/SKILL.md",
-      "source_location": "L33",
+      "source_file": "DESIGN.md",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -918,5 +930,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "da06d05202325e52b57ecacdae15b09dd6f0dfbe"
+  "built_at_commit": "5a617c5d178fbfb6ad072d113e18ab631e0cefdb"
 }

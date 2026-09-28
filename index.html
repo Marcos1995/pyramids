@@ -7,28 +7,28 @@
   <meta name="description" content="Síntesis crítica, en español, del trabajo de Filippo Biondi sobre las pirámides de Giza: método SAR, afirmaciones, patentes, críticas y qué faltaría para comprobarlas.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400..700&family=Fraunces:opsz,wght@9..144,500..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
       color-scheme: light dark;
-      --bg: light-dark(oklch(0.975 0.008 85), oklch(0.17 0.012 70));
-      --ink: light-dark(oklch(0.24 0.02 55), oklch(0.94 0.012 85));
-      --muted: light-dark(oklch(0.44 0.02 60), oklch(0.76 0.015 80));
-      --line: light-dark(oklch(0.88 0.012 80), oklch(0.32 0.012 70));
-      --surface: light-dark(oklch(0.995 0.004 90), oklch(0.22 0.012 70));
-      --accent: light-dark(oklch(0.46 0.11 42), oklch(0.74 0.1 58));
-      --accent-ink: light-dark(oklch(0.99 0.01 90), oklch(0.18 0.02 55));
-      --sand: light-dark(oklch(0.94 0.02 85), oklch(0.26 0.02 70));
-      --ok: light-dark(oklch(0.38 0.08 155), oklch(0.78 0.09 155));
-      --ok-bg: light-dark(oklch(0.94 0.03 155), oklch(0.28 0.04 155));
-      --warn: light-dark(oklch(0.42 0.09 75), oklch(0.82 0.1 85));
-      --warn-bg: light-dark(oklch(0.95 0.04 90), oklch(0.30 0.04 80));
-      --bad: light-dark(oklch(0.42 0.12 28), oklch(0.78 0.1 28));
-      --bad-bg: light-dark(oklch(0.95 0.025 28), oklch(0.30 0.04 28));
-      --radius: 14px;
-      --font: "Figtree", "Segoe UI", sans-serif;
-      --display: "Fraunces", "Iowan Old Style", Palatino, serif;
-      --space: clamp(1rem, 2vw, 1.5rem);
+      --bg: light-dark(#F7F4EF, #1A1714);
+      --ink: light-dark(#1C1917, #F7F4EF);
+      --body: light-dark(#3A3531, #E7E2DA);
+      --muted: light-dark(#5C564E, #C4BDB4);
+      --line: light-dark(#E7E2DA, #3A342C);
+      --surface: light-dark(#FAF8F5, #221E1A);
+      --accent: light-dark(#8C4A2F, #E4B89A);
+      --accent-ink: light-dark(#F7F4EF, #1A1714);
+      --sand: var(--surface);
+      --ok: light-dark(#3F3A36, #E7E2DA);
+      --ok-bg: transparent;
+      --warn: light-dark(#5C564E, #C4BDB4);
+      --warn-bg: light-dark(#E7E2DA, #2C2824);
+      --bad: var(--accent);
+      --bad-bg: light-dark(color-mix(in srgb, #8C4A2F 10%, transparent), color-mix(in srgb, #E4B89A 14%, transparent));
+      --radius: 4px;
+      --font: "Public Sans", "Segoe UI", sans-serif;
+      --display: "Newsreader", Georgia, serif;
     }
     [data-theme="light"] { color-scheme: light; }
     [data-theme="dark"] { color-scheme: dark; }
@@ -42,7 +42,9 @@
       font-size: 1.0625rem;
       line-height: 1.6;
       overflow-x: clip;
+      overflow-wrap: break-word;
     }
+    svg { max-width: 100%; height: auto; }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       *, *::before, *::after {
@@ -70,99 +72,134 @@
       position: sticky;
       top: 0;
       z-index: 5;
+      background: color-mix(in srgb, var(--bg) 94%, transparent);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(8px);
+    }
+    .top-inner {
+      width: min(100% - 2.5rem, 80rem);
+      margin-inline: auto;
       display: flex;
       align-items: center;
-      gap: 1rem;
-      padding: 0.7rem 1rem;
-      background: color-mix(in oklch, var(--bg) 88%, transparent);
-      border-bottom: 1px solid var(--line);
-      backdrop-filter: blur(10px);
+      gap: 1.75rem;
+      height: 3.5rem;
+      min-width: 0;
     }
     .mark {
       font-family: var(--display);
+      font-size: 1.125rem;
+      font-weight: 500;
       color: var(--ink);
       text-decoration: none;
       letter-spacing: -0.02em;
       white-space: nowrap;
     }
+    .mark:hover { color: var(--accent); }
     nav {
       display: flex;
-      flex-wrap: wrap;
-      gap: 0.35rem 0.85rem;
-      font-size: 0.86rem;
+      flex: 1 1 auto;
+      flex-wrap: nowrap;
+      gap: 1.35rem;
+      overflow-x: auto;
+      scrollbar-width: none;
+      min-width: 0;
+      font-size: 13px;
     }
-    nav a { color: var(--muted); text-decoration: none; }
+    nav::-webkit-scrollbar { display: none; }
+    nav a { color: var(--muted); text-decoration: none; white-space: nowrap; }
     nav a:hover { color: var(--ink); }
     .theme {
       margin-left: auto;
+      flex: none;
       border: 1px solid var(--line);
-      background: var(--surface);
-      color: var(--ink);
-      border-radius: 999px;
-      padding: 0.35rem 0.75rem;
+      background: transparent;
+      color: var(--muted);
+      border-radius: 2px;
+      padding: 0.28rem 0.7rem;
       font: inherit;
-      font-size: 0.86rem;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
       cursor: pointer;
     }
     .theme:hover { border-color: var(--accent); }
-    .wrap { width: min(100% - 2rem, 72rem); margin-inline: auto; }
+    .wrap { width: min(100% - 2.5rem, 80rem); margin-inline: auto; padding-bottom: 4rem; min-width: 0; }
     header.hero {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: clamp(1.5rem, 4vw, 3.5rem);
-      align-items: end;
-      padding: clamp(2.2rem, 6vw, 4.5rem) 0 2.5rem;
+      grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.9fr);
+      gap: clamp(2rem, 4vw, 3.5rem);
+      align-items: start;
+      padding: clamp(2.5rem, 5vw, 4rem) 0 3.5rem;
     }
     .kicker {
-      font-size: 0.78rem;
-      letter-spacing: 0.14em;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
       color: var(--accent);
-      margin: 0 0 0.8rem;
+      margin: 0 0 1.15rem;
     }
-    h1, h2, h3 { font-family: var(--display); font-weight: 560; letter-spacing: -0.02em; line-height: 1.12; }
-    h1 { font-size: clamp(2.3rem, 5vw, 4.1rem); margin: 0 0 1rem; }
-    h2 { font-size: clamp(1.7rem, 3vw, 2.35rem); margin: 0 0 0.7rem; }
-    h3 { font-size: 1.15rem; margin: 0 0 0.35rem; }
-    .lede { font-size: 1.15rem; max-width: 42rem; margin: 0; color: var(--muted); }
+    h1, h2 { font-family: var(--display); font-weight: 400; letter-spacing: -0.02em; line-height: 1.12; }
+    h3 { font-family: var(--font); font-weight: 500; letter-spacing: -0.01em; line-height: 1.3; font-size: 0.95rem; margin: 0 0 0.35rem; }
+    h1 { font-size: clamp(2.05rem, 3.6vw, 2.75rem); margin: 0 0 1.6rem; }
+    h2 { font-size: clamp(1.55rem, 2.4vw, 1.75rem); margin: 0 0 0.45rem; }
+    .lede { font-size: 17px; line-height: 1.65; max-width: 38rem; margin: 0; color: var(--body); }
     .note {
       margin-top: 1.2rem;
       max-width: 42rem;
       font-size: 0.92rem;
       color: var(--muted);
     }
-    section { padding: 3.2rem 0; border-top: 1px solid var(--line); scroll-margin-top: 5.5rem; }
+    section { padding: 4rem 0 0.5rem; border-top: 1px solid var(--line); scroll-margin-top: 4.5rem; }
+    section > p { max-width: 68ch; color: var(--body); }
     .js .reveal { opacity: 0; transform: translateY(10px); transition: opacity 280ms ease-out, transform 280ms ease-out; }
     .js .reveal.in { opacity: 1; transform: none; }
-    .hero-fig { margin: 0; }
+    .hero-fig {
+      margin: 0;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      padding: 1.35rem 1.35rem 0.9rem;
+    }
     .hero-fig svg { width: 100%; height: auto; display: block; }
-    .hero-fig figcaption, figcaption { color: var(--muted); font-size: 0.84rem; margin-top: 0.45rem; }
-    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .hero-fig figcaption, figcaption { color: var(--muted); font-size: 12px; margin-top: 0.65rem; text-align: center; line-height: 1.45; }
+    .grid-2 { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2.5rem; }
     .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.85rem; }
     .card, .stat, .miss {
       background: var(--surface);
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      padding: 1rem 1.05rem;
+      padding: 1.05rem 1.15rem;
+    }
+    .who .card {
+      background: none;
+      border: 0;
+      border-radius: 0;
+      padding: 0;
+    }
+    .who .card + .card {
+      border-left: 1px solid var(--line);
+      padding-left: 2.5rem;
     }
     .stat b {
       display: block;
       font-family: var(--display);
-      font-size: 1.55rem;
+      font-size: 1.45rem;
       letter-spacing: -0.02em;
-      font-weight: 560;
+      font-weight: 400;
     }
     .stat span, .card p, .miss p { margin: 0.25rem 0 0; color: var(--muted); font-size: 0.95rem; }
     .card p:first-of-type, .who p { max-width: 68ch; }
     .timeline { display: grid; gap: 0; }
     .tl {
       display: grid;
-      grid-template-columns: 7.2rem 1fr;
-      gap: 1rem;
-      padding: 1rem 0;
+      grid-template-columns: 9.5rem 1fr;
+      gap: 1.25rem 1.75rem;
+      padding: 1.2rem 0;
       border-top: 1px solid var(--line);
+      align-items: baseline;
     }
-    .tl time { font-family: var(--display); color: var(--accent); }
+    .tl time { font-family: var(--font); font-size: 13px; font-weight: 500; color: var(--muted); letter-spacing: 0.01em; }
     .steps {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -170,8 +207,8 @@
       margin-top: 1rem;
     }
     .step {
-      border-top: 2px solid var(--accent);
-      padding-top: 0.55rem;
+      border-top: 1px solid var(--accent);
+      padding-top: 0.65rem;
     }
     .step strong { display: block; font-size: 0.92rem; }
     .step span { color: var(--muted); font-size: 0.82rem; }
@@ -185,7 +222,7 @@
       fill: var(--accent);
     }
     @keyframes travel { to { offset-distance: 100%; } }
-    .schemes { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 1rem; }
+    .schemes { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 1rem; }
     .schemes svg, .pipe { background: var(--sand); border-radius: var(--radius); border: 1px solid var(--line); }
     .claims { display: grid; gap: 0.55rem; }
     .claim {
@@ -199,29 +236,39 @@
     .claim p { margin: 0; max-width: 68ch; }
     .claim small { grid-column: 1; color: var(--muted); }
     .pill {
-      font-size: 0.75rem;
-      letter-spacing: 0.04em;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      border-radius: 999px;
-      padding: 0.25rem 0.55rem;
+      border-radius: 2px;
+      padding: 0.15rem 0.5rem;
       white-space: nowrap;
       border: 1px solid var(--line);
+      vertical-align: 1px;
     }
     .pill.ok { color: var(--ok); background: var(--ok-bg); }
     .pill.warn { color: var(--warn); background: var(--warn-bg); }
-    .pill.bad { color: var(--bad); background: var(--bad-bg); }
-    .quotes { display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; }
+    .pill.bad { color: var(--bad); background: var(--bad-bg); border-color: color-mix(in srgb, var(--accent) 28%, var(--line)); }
+    .quotes { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0.85rem; }
     blockquote {
       margin: 0;
-      padding: 1rem;
-      border-left: 3px solid var(--accent);
-      background: var(--surface);
-      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 0.2rem 0 0.2rem 1rem;
+      border-left: 1px solid var(--accent);
+      background: none;
     }
     blockquote p { margin: 0 0 0.45rem; }
     blockquote footer { color: var(--muted); font-size: 0.86rem; }
     ol.miss-list { margin: 0; padding: 0; list-style: none; display: grid; gap: 0.7rem; }
-    .miss { display: grid; grid-template-columns: auto 1fr; gap: 0.75rem; }
+    .miss {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.85rem;
+      background: none;
+      border: 0;
+      border-top: 1px solid var(--line);
+      border-radius: 0;
+      padding: 1rem 0;
+    }
     .n {
       font-family: var(--display);
       color: var(--accent);
@@ -230,16 +277,16 @@
     .sources { columns: 2; gap: 1.5rem; padding-left: 1.1rem; }
     .sources li { break-inside: avoid; margin: 0 0 0.7rem; }
     .sources a { overflow-wrap: anywhere; }
-    .stage { display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 0.85rem; margin: 1.1rem 0 1.5rem; align-items: start; }
+    .stage { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr); gap: 0.85rem; margin: 1.1rem 0 1.5rem; align-items: start; }
     .player, .need { border: 1px solid var(--line); border-radius: var(--radius); background: var(--sand); padding: 0.75rem 0.85rem 0.9rem; }
     .need { background: var(--surface); }
     .need p, .player .cap { margin: 0.35rem 0 0; color: var(--muted); font-size: 0.92rem; }
     .disclaimer { margin: 0; font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
     .player-bar { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; margin: 0.55rem 0; }
     .player-bar button {
-      font: inherit; font-size: 0.86rem; cursor: pointer;
-      border: 1px solid var(--line); background: var(--surface); color: var(--ink);
-      border-radius: 999px; padding: 0.28rem 0.7rem;
+      font: inherit; font-size: 13px; cursor: pointer;
+      border: 1px solid var(--line); background: var(--bg); color: var(--ink);
+      border-radius: 2px; padding: 0.28rem 0.7rem;
     }
     .player-bar button:hover { border-color: var(--accent); }
     .player-bar button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); }
@@ -251,26 +298,37 @@
     .shaft, .spiral, .cube, .claimed { opacity: 0; }
     .player.is-final .shaft, .player.is-final .spiral, .player.is-final .cube, .player.is-final .claimed { opacity: 1; }
     .player.is-final .scanline { opacity: 0; }
-    footer.colophon { padding: 1.5rem 0 2.5rem; color: var(--muted); font-size: 0.88rem; border-top: 1px solid var(--line); }
+    footer.colophon {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem 2rem;
+      flex-wrap: wrap;
+      margin-top: 3.5rem;
+      padding: 1.75rem 0 0;
+      color: var(--muted);
+      font-size: 12px;
+      border-top: 1px solid var(--line);
+    }
+    footer.colophon p { margin: 0; max-width: 42rem; }
     @media (max-width: 980px) {
       header.hero, .grid-2, .schemes, .quotes, .stage { grid-template-columns: 1fr; }
       .grid-3 { grid-template-columns: 1fr 1fr; }
       .sources { columns: 1; }
+      .who .card + .card { border-left: 0; padding-left: 0; border-top: 1px solid var(--line); padding-top: 1.5rem; }
     }
     @media (max-width: 640px) {
+      .top-inner, .wrap { width: min(100% - 2rem, 80rem); }
       .pipe text { display: none; }
-      section { scroll-margin-top: 8.5rem; }
-      .top { flex-wrap: wrap; }
-      .theme { margin-left: 0; }
       .grid-3, .steps, .tl { grid-template-columns: 1fr; }
       .claim { grid-template-columns: 1fr; }
-      h1 { font-size: clamp(2rem, 10vw, 2.6rem); }
+      h1 { font-size: 2rem; }
     }
   </style>
 </head>
 <body>
   <a class="skip" href="#contenido">Saltar al contenido</a>
   <div class="top">
+    <div class="top-inner">
     <a class="mark" href="#inicio">Biondi · Giza</a>
     <nav aria-label="Secciones">
       <a href="#quien">Quién</a>
@@ -289,6 +347,7 @@
       <a href="#fuentes">Fuentes</a>
     </nav>
     <button class="theme" type="button" id="theme" aria-pressed="false">Tema</button>
+    </div>
   </div>
 
   <main id="contenido">
@@ -311,7 +370,7 @@
             <rect x="132" y="228" width="52" height="28" fill="none" stroke="var(--accent)" stroke-width="1.4"/>
             <rect x="236" y="228" width="52" height="28" fill="none" stroke="var(--accent)" stroke-width="1.4"/>
             <path class="scan" d="M24 20 V260" fill="none" stroke="var(--accent)" stroke-width="1" opacity="0.7"/>
-            <text x="40" y="24" fill="var(--muted)" font-size="12" font-family="Figtree, sans-serif">esquema, no un tomograma</text>
+            <text x="40" y="24" fill="var(--muted)" font-size="12" font-family="Public Sans, sans-serif">esquema, no un tomograma</text>
           </svg>
           <figcaption>La línea que cruza es solo una animación. El corte de abajo alude a lo anunciado en 2025, no a una medida.</figcaption>
         </figure>
@@ -368,7 +427,7 @@
         <svg class="pipe" viewBox="0 0 720 72" role="img" aria-label="Cadena: satélite, ecos, sub-aperturas Doppler, recorte de banda, mapas de vibración y modelo tridimensional">
           <rect width="720" height="72" fill="var(--sand)"/>
           <path d="M28 36 H692" fill="none" stroke="var(--line)" stroke-width="2"/>
-          <g fill="var(--ink)" font-family="Figtree, sans-serif" font-size="11">
+          <g fill="var(--ink)" font-family="Public Sans, sans-serif" font-size="11">
             <circle cx="28" cy="36" r="5"/><text x="16" y="58">Satélite</text>
             <circle cx="160" cy="36" r="5"/><text x="142" y="58">Ecos</text>
             <circle cx="292" cy="36" r="5"/><text x="248" y="58">Sub-aperturas</text>
@@ -410,7 +469,7 @@
               <title id="khafreT">Recreación esquemática del corte de Kefrén anunciado en 2025</title>
               <desc id="khafreD">Pirámide pequeña sobre ocho pozos que bajan mucho más que la altura del monumento, hasta dos cubos. Recreación, no un radargrama.</desc>
               <rect width="640" height="500" fill="var(--sand)"/>
-              <text x="20" y="28" fill="var(--ink)" font-family="Fraunces, serif" font-size="18">Kefrén · recreación esquemática</text>
+              <text x="20" y="28" fill="var(--ink)" font-family="Newsreader, serif" font-size="18">Kefrén · recreación esquemática</text>
               <path d="M40 118 H600" stroke="var(--ink)" stroke-width="1.2" fill="none"/>
               <path d="M250 118 L320 52 L390 118 Z" fill="none" stroke="var(--ink)" stroke-width="1.6"/>
               <rect x="304" y="96" width="32" height="14" fill="none" stroke="var(--muted)" stroke-width="1"/>
@@ -436,7 +495,7 @@
               <title id="khufuT">Recreación esquemática de Keops: salas conocidas y rampas afirmadas</title>
               <desc id="khufuD">Corte norte-sur de Keops. En trazo continuo, cámaras conocidas. En trazo discontinuo, rampas que el artículo retractado dice haber medido.</desc>
               <rect width="480" height="560" fill="var(--sand)"/>
-              <text x="16" y="28" fill="var(--ink)" font-family="Fraunces, serif" font-size="18">Keops · conocido y afirmado</text>
+              <text x="16" y="28" fill="var(--ink)" font-family="Newsreader, serif" font-size="18">Keops · conocido y afirmado</text>
               <path d="M40 500 H440" stroke="var(--ink)" stroke-width="1.2"/>
               <path d="M70 500 L240 80 L410 500 Z" fill="none" stroke="var(--ink)" stroke-width="1.6"/>
               <g fill="none" stroke="var(--ink)" stroke-width="1.3">
@@ -451,10 +510,10 @@
                 <path d="M360 470 L280 250"/>
                 <path d="M150 250 H330"/>
               </g>
-              <text x="300" y="246" fill="var(--ink)" font-size="12" font-family="Figtree, sans-serif">rey + zed</text>
-              <text x="300" y="292" fill="var(--ink)" font-size="12" font-family="Figtree, sans-serif">galería</text>
-              <text x="250" y="332" fill="var(--ink)" font-size="12" font-family="Figtree, sans-serif">reina</text>
-              <text x="96" y="530" fill="var(--accent)" font-size="12" font-family="Figtree, sans-serif">trazo discontinuo: lo que el artículo da por nuevo</text>
+              <text x="300" y="246" fill="var(--ink)" font-size="12" font-family="Public Sans, sans-serif">rey + zed</text>
+              <text x="300" y="292" fill="var(--ink)" font-size="12" font-family="Public Sans, sans-serif">galería</text>
+              <text x="250" y="332" fill="var(--ink)" font-size="12" font-family="Public Sans, sans-serif">reina</text>
+              <text x="96" y="530" fill="var(--accent)" font-size="12" font-family="Public Sans, sans-serif">trazo discontinuo: lo que el artículo da por nuevo</text>
             </svg>
             <figcaption>Continuo: cámaras ya conocidas. Discontinuo: rampas y corredor sur del artículo de 2022, retractado en 2026. Original: <a href="https://www.mdpi.com/2072-4292/14/20/5231">Remote Sensing 14, 5231</a>.</figcaption>
           </figure>
@@ -476,7 +535,7 @@
             <svg viewBox="0 0 400 460" role="img" aria-label="Corte de Kefrén a escala: pirámide, ocho pozos hasta 648 metros y dos cubos">
               <rect width="400" height="460" fill="transparent"/>
               <line x1="36" y1="78" x2="36" y2="430" stroke="var(--muted)" stroke-width="1"/>
-              <g fill="var(--muted)" font-size="11" font-family="Figtree, sans-serif">
+              <g fill="var(--muted)" font-size="11" font-family="Public Sans, sans-serif">
                 <text x="6" y="82">0</text>
                 <text x="6" y="186">200</text>
                 <text x="6" y="294">400</text>
@@ -540,7 +599,7 @@
                 <path d="M120 120 H250"/>
                 <rect x="200" y="92" width="40" height="16"/>
               </g>
-              <g fill="var(--muted)" font-size="11" font-family="Figtree, sans-serif">
+              <g fill="var(--muted)" font-size="11" font-family="Public Sans, sans-serif">
                 <text x="228" y="112">rey</text>
                 <text x="228" y="148">galería</text>
                 <text x="182" y="174">reina</text>
@@ -569,14 +628,14 @@
                 <path d="M40 150 L160 70 L280 150" fill="none" stroke="var(--ink)"/>
                 <circle cx="250" cy="36" r="8" fill="none" stroke="var(--accent)"/>
                 <path d="M40 36 H230" stroke="var(--accent)" stroke-dasharray="3 3"/>
-                <text x="16" y="24" fill="var(--ink)" font-size="13" font-family="Figtree, sans-serif">1. Pasa el satélite</text>
+                <text x="16" y="24" fill="var(--ink)" font-size="13" font-family="Public Sans, sans-serif">1. Pasa el satélite</text>
               </svg>
               <svg class="frame" viewBox="0 0 320 200" aria-label="Paso 2: ecos">
                 <rect width="320" height="200" fill="transparent"/>
                 <path d="M40 160 L160 70 L280 160" fill="none" stroke="var(--ink)"/>
                 <path d="M160 70 Q200 20 250 40" fill="none" stroke="var(--accent)"/>
                 <path d="M250 40 Q180 90 160 150" fill="none" stroke="var(--accent)" stroke-dasharray="4 3"/>
-                <text x="16" y="24" fill="var(--ink)" font-size="13" font-family="Figtree, sans-serif">2. Vuelve el eco</text>
+                <text x="16" y="24" fill="var(--ink)" font-size="13" font-family="Public Sans, sans-serif">2. Vuelve el eco</text>
               </svg>
               <svg class="frame" viewBox="0 0 320 200" aria-label="Paso 3: sub-aperturas Doppler">
                 <rect width="320" height="200" fill="transparent"/>
@@ -584,19 +643,19 @@
                 <rect x="30" y="100" width="80" height="22" fill="none" stroke="var(--accent)"/>
                 <rect x="120" y="100" width="80" height="22" fill="none" stroke="var(--accent)"/>
                 <rect x="210" y="100" width="80" height="22" fill="none" stroke="var(--accent)"/>
-                <text x="16" y="24" fill="var(--ink)" font-size="13" font-family="Figtree, sans-serif">3. Se parte en sub-aperturas</text>
+                <text x="16" y="24" fill="var(--ink)" font-size="13" font-family="Public Sans, sans-serif">3. Se parte en sub-aperturas</text>
               </svg>
               <svg class="frame" viewBox="0 0 320 200" aria-label="Paso 4: mapa de vibración">
                 <rect width="320" height="200" fill="transparent"/>
                 <path d="M40 140 C80 80 120 150 160 90 C200 40 240 130 290 70" fill="none" stroke="var(--accent)" stroke-width="1.6"/>
-                <text x="16" y="24" fill="var(--ink)" font-size="13" font-family="Figtree, sans-serif">4. Mapa de vibración</text>
+                <text x="16" y="24" fill="var(--ink)" font-size="13" font-family="Public Sans, sans-serif">4. Mapa de vibración</text>
               </svg>
               <svg class="frame on" viewBox="0 0 320 200" aria-label="Paso 5: corte en color">
                 <rect width="320" height="200" fill="transparent"/>
                 <path d="M70 40 L160 170 L250 40 Z" fill="var(--sand)" stroke="var(--ink)"/>
                 <rect x="120" y="80" width="28" height="16" fill="var(--accent)" opacity="0.85"/>
                 <rect x="150" y="110" width="40" height="12" fill="var(--warn)" opacity="0.9"/>
-                <text x="16" y="24" fill="var(--ink)" font-size="13" font-family="Figtree, sans-serif">5. Corte en color</text>
+                <text x="16" y="24" fill="var(--ink)" font-size="13" font-family="Public Sans, sans-serif">5. Corte en color</text>
               </svg>
             </div>
             <p class="cap">El color del último paso es una leyenda, no una cavidad. El artículo no documenta un filtro paso bajo con ese nombre.</p>

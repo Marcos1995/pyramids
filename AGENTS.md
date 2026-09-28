@@ -11,7 +11,7 @@
 ## Flujo
 
 - Memoria = `PROJECT.md`: léelo primero; si cambia qué hace, stack, comandos o estructura, actualiza `## Estado` en el mismo commit. `graphify-out/` se regenera solo.
-- Elección no trivial: skill `decide` (queda en `docs/DECISIONES.md`). Sin APIs de pago.
+- Elección no trivial: skill `laya` (decide el modelo local Laya, queda en `docs/DECISIONES.md`). Sin APIs de pago.
 - Librería o API externa: mira la versión instalada (lockfile) y su doc oficial antes de usarla. Bug o test roto: skill `debug`.
 - Hecho = `git add -A` + commit corto + push. Respuesta: máx. 5 líneas, `HECHO`/`FALLO`, sin relleno.
 
