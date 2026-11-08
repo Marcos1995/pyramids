@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>La pendiente de 51°51′ y las cuentas de la Gran Pirámide</title>
+<title>La Gran Pirámide cabe casi en un círculo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -20,24 +20,23 @@ html[data-theme="dark"]{
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font:1.05rem/1.5 var(--sans)}
+body{margin:0;background:var(--bg);color:var(--ink);font:1.05rem/1.55 var(--sans)}
 img,svg{max-width:100%}
 a{color:var(--cta)}
 html[data-theme="dark"] a{color:#b6f5cf}
-a:hover{text-decoration:none}
 :focus-visible{outline:2px solid var(--cta);outline-offset:3px}
 html[data-theme="dark"] :focus-visible{outline-color:var(--accent)}
 .wrap{width:min(72rem,calc(100% - 2rem));margin-inline:auto}
 header.top{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;padding:1.1rem 0 .2rem}
 .kicker{margin:0;color:var(--muted);font-size:.85rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
-h1{margin:.25rem 0 .6rem;font-size:clamp(2.15rem,1.2rem + 4vw,4.4rem);font-weight:800;letter-spacing:-.045em;line-height:.95;max-width:18ch}
+h1{margin:.25rem 0 .6rem;font-size:clamp(2.15rem,1.2rem + 4vw,4.2rem);font-weight:800;letter-spacing:-.045em;line-height:.98;max-width:16ch}
 .chip{display:inline-block;margin:0 0 1rem;padding:.25rem .6rem;border:1px solid var(--line);border-radius:99px;color:var(--muted);font-size:.82rem}
 .tema{border:0;background:transparent;padding:.2rem;cursor:pointer}
 .pill{display:flex;align-items:center;justify-content:space-between;width:3.4rem;height:1.8rem;padding:0 .28rem;border-radius:99px;background:var(--cta);position:relative}
 .pill svg{width:.85rem;height:.85rem;fill:var(--accent);position:relative;z-index:1}
 .dot{position:absolute;top:.18rem;left:.18rem;width:1.44rem;height:1.44rem;border-radius:50%;background:var(--accent);transition:transform .2s ease}
 html[data-theme="dark"] .dot{transform:translateX(1.6rem)}
-.cta{display:inline-block;margin:.2rem 0 1.2rem;padding:.75rem 1.1rem;border:0;border-radius:999px;background:var(--cta);color:var(--cta-ink);font:inherit;font-weight:700;cursor:pointer;text-decoration:none}
+.cta{display:inline-block;margin:.2rem 0 1.2rem;padding:.75rem 1.1rem;border:0;border-radius:999px;background:var(--cta);color:var(--cta-ink);font:inherit;font-weight:700;cursor:pointer}
 html[data-theme="dark"] .cta{background:var(--accent);color:var(--on)}
 .kpis{display:grid;gap:.9rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,14.5rem),1fr));margin:0 0 1.4rem}
 .kpi{display:flex;flex-direction:column;gap:.2rem;padding:1.1rem 1.2rem;background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)}
@@ -48,126 +47,208 @@ html[data-theme="dark"] .cta{background:var(--accent);color:var(--on)}
 .kpi.hero small,.kpi.hero strong span{color:inherit;opacity:.8}
 .delta{align-self:flex-start;margin-top:.45rem;padding:.2rem .6rem;border-radius:99px;font-size:.8125rem;font-weight:700;background:color-mix(in srgb,var(--ink) 8%,transparent)}
 .hero .delta{background:rgb(255 255 255/.28);color:inherit}
-section{padding:1.4rem 0 1.6rem}
+section{padding:1.5rem 0 1.7rem}
 .band{background:var(--surface);border-block:1px solid var(--line)}
 .inkband{background:var(--cta);color:var(--cta-ink)}
 .inkband a{color:var(--accent)}
-.reveal h2{margin:0 0 .35rem;font-size:clamp(1.5rem,1.1rem + 1.5vw,2.2rem);font-weight:800;letter-spacing:-.03em;line-height:1.05}
-.lead{margin:0 0 1rem;max-width:62ch}
+h2{margin:0 0 .4rem;font-size:clamp(1.5rem,1.1rem + 1.5vw,2.2rem);font-weight:800;letter-spacing:-.03em;line-height:1.08}
+.lead{margin:0 0 1rem;max-width:64ch}
 .card{min-width:0;padding:1.15rem 1.25rem;background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)}
-.inkband .card{background:transparent;border-color:rgb(255 255 255/.2);box-shadow:none;color:inherit}
-.row{display:grid;gap:.9rem;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr)}
+.row{display:grid;gap:.9rem;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr)}
+.pair{display:grid;gap:.9rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr))}
 @media(max-width:900px){.row{grid-template-columns:minmax(0,1fr)}}
-.card h2,.card h3{margin:0 0 .15rem;font-size:1.05rem}
-.cap{margin:0 0 .9rem;color:var(--muted);font-size:.875rem}
-.inkband .cap{color:rgb(244 255 247/.75)}
+.card h3{margin:0 0 .25rem;font-size:1.05rem}
+.cap{margin:.35rem 0 0;color:var(--muted);font-size:.9rem}
 label.sl{display:flex;flex-direction:column;gap:.35rem;font-weight:700}
 input[type=range]{width:100%;accent-color:var(--cta)}
 html[data-theme="dark"] input[type=range]{accent-color:var(--accent)}
-.out{display:grid;grid-template-columns:repeat(auto-fit,minmax(9rem,1fr));gap:.6rem;margin-top:.9rem}
-.out b{display:block;font-size:1.35rem;font-variant-numeric:tabular-nums;letter-spacing:-.03em}
+.out{display:grid;grid-template-columns:repeat(auto-fit,minmax(8.5rem,1fr));gap:.7rem;margin-top:.9rem}
+.out p{margin:0}
+.out b{display:block;font-size:1.3rem;font-variant-numeric:tabular-nums;letter-spacing:-.03em}
 .out span{color:var(--muted);font-size:.8rem}
 .chart svg{display:block;width:100%;height:auto}
 .chart .grid{stroke:var(--line)}
-.chart .ax{fill:var(--muted);font-size:22px;font-family:var(--sans);font-variant-numeric:tabular-nums}
+.chart .ax{fill:var(--muted);font-size:20px;font-family:var(--sans)}
 .chart .ln{fill:none;stroke-width:2.5;stroke-linejoin:round;stroke-linecap:round}
 .chart .ln.main{stroke:var(--series)}
 .chart .ln.ref{stroke:var(--muted);stroke-dasharray:5 5;stroke-width:2}
 .chart rect.b{fill:var(--series)}
-.legend{display:flex;flex-wrap:wrap;gap:.4rem 1rem;margin-top:.7rem;color:var(--muted);font-size:.8125rem}
+.legend{display:flex;flex-wrap:wrap;gap:.4rem 1rem;margin-top:.7rem;color:var(--muted);font-size:.85rem}
 .legend span::before{content:"";display:inline-block;width:.65rem;height:.65rem;margin-right:.35rem;border-radius:3px;background:var(--c);vertical-align:-1px}
 .scroller{overflow-x:auto;max-width:100%}
 table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+caption{caption-side:bottom;padding-top:.6rem;color:var(--muted);font-size:.85rem;text-align:left}
 th,td{padding:.55rem .6rem;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
-th button{width:100%;min-height:2.6rem;padding:0;border:0;background:transparent;color:inherit;font:inherit;font-weight:800;text-align:left;cursor:pointer}
+th button{width:100%;min-height:2.7rem;padding:0;border:0;background:transparent;color:inherit;font:inherit;font-weight:800;text-align:left;cursor:pointer}
 th button[aria-sort="descending"]::after{content:" ↓"}
 th button[aria-sort="ascending"]::after{content:" ↑"}
-.split{display:grid;gap:1rem;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);align-items:center}
+.split{display:grid;gap:1rem 1.4rem;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);align-items:center}
 @media(max-width:800px){.split{grid-template-columns:1fr}}
-.motif{width:min(100%,16rem)}
-.go{display:inline-block;padding:.2rem .6rem;border-radius:99px;border:0;background:var(--accent);color:var(--on);font:inherit;font-size:.8rem;font-weight:800;text-decoration:none;cursor:pointer}
+figure{margin:0}
+figure svg{display:block;width:100%;height:auto;background:var(--surface);border:1px solid var(--line);border-radius:14px}
+.inkband figure svg{background:transparent;border-color:rgb(255 255 255/.25)}
+figure svg .face{fill:#18E667;stroke:currentColor;stroke-width:3;stroke-linejoin:round}
+figure svg .dim{stroke:currentColor;fill:none;stroke-width:2}
+figure svg .ghost{stroke:currentColor;fill:none;stroke-width:2;stroke-dasharray:5 4}
+figure svg .palm{fill:#18E667;stroke:currentColor;stroke-width:2}
+figure svg .half{fill:color-mix(in srgb,#18E667 45%,var(--surface));stroke:currentColor;stroke-width:2}
+.keys{display:grid;gap:.45rem;margin:0;padding:0;list-style:none}
+.keys li{display:grid;grid-template-columns:9.2rem 1fr;gap:.4rem;align-items:baseline}
+.keys b{font-variant-numeric:tabular-nums}
+.versus{display:grid;gap:.8rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr));margin:0 0 1rem}
+.versus article{padding:1rem 1.1rem;border-radius:14px;background:var(--surface);border:1px solid var(--line)}
+.versus .year{background:var(--accent);color:var(--on);border-color:var(--accent)}
+.versus strong{display:block;font-size:clamp(2rem,1.4rem + 2vw,3rem);font-weight:800;letter-spacing:-.04em;line-height:1}
+.rulers{display:flex;flex-direction:column;gap:.85rem}
+.ruler{display:grid;grid-template-columns:minmax(8rem,11rem) 1fr;gap:.35rem .7rem;align-items:center}
+.ruler span{font-size:.92rem}
+.ruler i{display:block;height:1.15rem;border-radius:7px;background:var(--series);min-width:2px}
+.ruler b{grid-column:2;font-size:.85rem;color:var(--muted);font-weight:600}
+.steps{display:grid;gap:.6rem;margin:0;padding:0;list-style:none}
+.steps li{display:grid;grid-template-columns:2rem 1fr;gap:.6rem;align-items:start}
+.steps i{display:grid;place-items:center;width:2rem;height:2rem;border-radius:99px;background:var(--accent);color:var(--on);font-style:normal;font-weight:800}
+.ledger{display:grid;gap:.75rem}
+.ledger article h3{margin:0 0 .35rem;font-size:1.12rem}
+.ledger p{margin:.35rem 0 0}
+.tag{display:inline-block;margin:0 0 .15rem;padding:.12rem .55rem;border-radius:99px;font-size:.78rem;font-weight:800;letter-spacing:.01em}
+.tag.yes{background:var(--accent);color:var(--on)}
+.tag.later{border:1px solid var(--line);color:var(--ink)}
+.tag.no{background:var(--cta);color:var(--cta-ink)}
+html[data-theme="dark"] .tag.no{background:var(--accent);color:var(--on)}
+.go{display:inline-block;padding:.2rem .6rem;border-radius:99px;border:0;background:var(--accent);color:var(--on);font:inherit;font-size:.8rem;font-weight:800;text-decoration:none}
 .acts{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.6rem}
 .map{width:100%;height:18rem;border:0;border-radius:14px;background:var(--line)}
 footer{padding:1.4rem 0 2.4rem;color:var(--muted);font-size:.9rem}
-footer p{max-width:70ch}
-.big{font-size:clamp(3rem,10vw,6rem);font-weight:800;letter-spacing:-.05em;line-height:.9;margin:0}
+footer p{max-width:72ch}
 @media(prefers-reduced-motion:no-preference){
   .reveal{animation:rise .55s ease both}
-  .reveal h2,.big{animation:pop .55s ease both}
+  .reveal h2{animation:pop .55s ease both}
 }
 @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-@keyframes pop{from{transform:scale(.94)}to{transform:none}}
+@keyframes pop{from{transform:scale(.96)}to{transform:none}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.dot{transition:none}}
 </style>
 </head>
 <body>
 <div class="wrap">
 <header class="top">
-  <p class="kicker">Gran Pirámide de Guiza · dos vídeos · cuentas revisadas</p>
+  <p class="kicker">Guiza · la pirámide de Keops · sin necesidad del vídeo</p>
   <button type="button" class="tema" id="tema" aria-label="Cambiar tema claro u oscuro">
     <span class="pill">
-      <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="3.2"/><g stroke="#18E667" stroke-width="1.4"><path d="M8 1v2M8 13v2M1 8h2M13 8h2M3 3l1.4 1.4M11.6 11.6 13 13M13 3l-1.4 1.4M4.4 11.6 3 13"/></g></svg>
+      <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="3.2"/></svg>
       <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M9.2 1.4A6.2 6.2 0 1 0 14.6 10 5 5 0 0 1 9.2 1.4z"/></svg>
       <span class="dot"></span>
     </span>
   </button>
 </header>
-<h1>La pendiente de 51°51′ acerca el perímetro a 2π veces la altura</h1>
-<p class="chip">Fuentes: Abstract Away, 2020, y un clip de History, 2019. Lados: J. H. Cole, 1925.</p>
-<p class="lead">Cada cifra de abajo sale de una cuenta. El ángulo lo miden las piedras de revestimiento que quedan. π y φ salen de ese triángulo. El año, la luz y el Sol salen de cambiar de unidad o de multiplicar por una potencia de diez.</p>
-<button type="button" class="cta" id="usar">Usar 51°51′</button>
+<h1>Dar la vuelta a la base casi es rodear un círculo de su altura</h1>
+<p class="chip">Lados: J. H. Cole, 1925. Pendiente: el seked egipcio de 5½ palmos.</p>
+<p class="lead">Esto es la pirámide grande de Guiza, la de Keops. La base es un cuadrado. Lo único que hay que mirar es la pendiente de la cara. Con esa pendiente, el perímetro se parece a un círculo y la cara se parece a la proporción áurea. Las dos cosas salen juntas. El año de 365,242 días no es una de ellas.</p>
+<button type="button" class="cta" id="usar">Ver el triángulo</button>
 <div class="kpis">
   <article class="kpi hero">
-    <small>Ángulo de la cara, Petrie y Cole</small>
-    <strong id="k-ang">51,85<span>°</span></strong>
-    <span class="delta" id="k-ang-d">▲ el control está en el ángulo del vídeo</span>
+    <small>Cuánto entra la cara por cada tramo que sube</small>
+    <strong>14<span>por 11</span></strong>
+    <span class="delta">5½ palmos de seked</span>
   </article>
   <article class="kpi">
-    <small>Perímetro ÷ (2 × altura) frente a π</small>
-    <strong id="k-pi">0,014<span>%</span></strong>
-    <span class="delta" id="k-pi-d">▼ por debajo de π</span>
+    <small>Perímetro partido por la altura, frente a 2π</small>
+    <strong>0,040<span>%</span></strong>
+    <span class="delta">▲ un poco por encima de 2π</span>
   </article>
   <article class="kpi">
-    <small>Apotema ÷ semilado frente a φ</small>
-    <strong id="k-phi">0,050<span>%</span></strong>
-    <span class="delta" id="k-phi-d">▼ por debajo de φ</span>
+    <small>Cara inclinada partida por la mitad de la base, frente a φ</small>
+    <strong>0,034<span>%</span></strong>
+    <span class="delta">▲ un poco por encima de φ</span>
   </article>
   <article class="kpi">
-    <small>Desvío al norte, los dos vídeos</small>
+    <small>Desvío al norte que citan los vídeos</small>
     <strong>0,05<span>°</span></strong>
-    <span class="delta">3/60 de grado = 3 minutos de arco</span>
+    <span class="delta">3 minutos de arco</span>
   </article>
 </div>
 </div>
 
-<section class="band" id="calculo">
-  <div class="wrap reveal">
-    <h2>Mueve el ángulo y la cuenta cambia</h2>
-    <p class="lead">La base es el lado medio de Cole, 230,364 m. La altura es la mitad de ese lado por la tangente del ángulo. El perímetro partido por el doble de la altura es π cuando la tangente vale 4/π.</p>
-    <div class="row">
-      <div class="card">
-        <label class="sl" for="ang">Ángulo de la cara, en grados
-          <input id="ang" type="range" min="50" max="54" step="0.01" value="51.85">
-        </label>
-        <div class="out">
-          <p><span>Altura</span><b id="o-h">—</b></p>
-          <p><span>Perímetro</span><b id="o-p">—</b></p>
-          <p><span>Perímetro / (2 × altura)</span><b id="o-r">—</b></p>
-          <p><span>π</span><b id="o-pi">—</b></p>
-        </div>
-        <p class="cap" id="o-cap"></p>
-      </div>
-      <div class="card">
-        <h3>Hueco de cada fórmula con este ángulo</h3>
-        <p class="cap">Cien menos el cociente, en valor absoluto. El mismo color porque las cuatro salen del mismo ángulo: el seno repite la tangente por el coseno.</p>
-        <div class="chart" id="bars"></div>
-      </div>
+<section class="band" id="triangulo">
+  <div class="wrap reveal split">
+    <figure>
+      <svg viewBox="0 0 440 310" role="img" aria-label="Corte de la pirámide: base abajo, altura en el centro, cara inclinada">
+        <polygon class="face" points="50,268 330,268 190,90"/>
+        <line class="dim" x1="190" y1="90" x2="190" y2="268"/>
+        <line class="dim" x1="50" y1="286" x2="330" y2="286"/>
+        <line class="dim" x1="28" y1="90" x2="28" y2="268"/>
+        <path class="dim" d="M118,268 A52,52 0 0 1 94,224"/>
+      </svg>
+      <figcaption class="cap">Las cotas van al lado del dibujo, no encima de las líneas. La raya vertical es la altura. La curva marca el ángulo de la cara.</figcaption>
+    </figure>
+    <div>
+      <h2>Un corte por el medio</h2>
+      <p class="lead">Si partes la pirámide por el centro de una cara, queda este triángulo. La base del triángulo es un lado entero. La altura es la de la pirámide ya revestida.</p>
+      <ul class="keys">
+        <li><span>Lado medio</span><b>230,364 m</b></li>
+        <li><span>Mitad</span><b>115,182 m</b></li>
+        <li><span>Altura</span><b>146,595 m</b></li>
+        <li><span>Ángulo</span><b>51°50′34″</b></li>
+      </ul>
+      <p class="cap">El lado es la media de los cuatro que midió Cole. La altura es ese lado por 280/440, el modelo en codos. El ángulo es arctan(14/11).</p>
     </div>
-    <div class="card" style="margin-top:.9rem">
-      <h3>De 50° a 54°, π y φ se cruzan cerca de 51,8°</h3>
-      <p class="cap">Línea continua: |perímetro/(2×altura) − π| / π. Línea discontinua: |apotema/semilado − φ| / φ. El punto es el ángulo del control.</p>
-      <div class="chart" id="lines"></div>
-      <p class="legend"><span style="--c:var(--series)">hueco de π</span><span style="--c:var(--muted)">hueco de φ</span></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap reveal">
+    <h2>La pendiente se contaba en palmos</h2>
+    <p class="lead">Un codo egipcio son 7 palmos. El seked dice cuántos palmos entra la cara cada vez que sube un codo. En esta pirámide son 5 palmos y medio. Por eso el triángulo es 11 a lo ancho de la mitad y 14 de alto: 220 y 280 codos, o 11 y 14.</p>
+    <div class="pair">
+      <figure>
+        <svg viewBox="0 0 460 120" role="img" aria-label="Siete palmos iguales, en fila">
+          <rect class="palm" x="16" y="28" width="52" height="64" rx="4"/>
+          <rect class="palm" x="76" y="28" width="52" height="64" rx="4"/>
+          <rect class="palm" x="136" y="28" width="52" height="64" rx="4"/>
+          <rect class="palm" x="196" y="28" width="52" height="64" rx="4"/>
+          <rect class="palm" x="256" y="28" width="52" height="64" rx="4"/>
+          <rect class="palm" x="316" y="28" width="52" height="64" rx="4"/>
+          <rect class="palm" x="376" y="28" width="52" height="64" rx="4"/>
+        </svg>
+        <figcaption class="cap">Hacia arriba, un codo: 7 palmos.</figcaption>
+      </figure>
+      <figure>
+        <svg viewBox="0 0 420 120" role="img" aria-label="Cinco palmos y un medio palmo">
+          <rect class="palm" x="16" y="28" width="60" height="64" rx="4"/>
+          <rect class="palm" x="84" y="28" width="60" height="64" rx="4"/>
+          <rect class="palm" x="152" y="28" width="60" height="64" rx="4"/>
+          <rect class="palm" x="220" y="28" width="60" height="64" rx="4"/>
+          <rect class="palm" x="288" y="28" width="60" height="64" rx="4"/>
+          <rect class="half" x="356" y="28" width="30" height="64" rx="4"/>
+        </svg>
+        <figcaption class="cap">Hacia dentro, en ese mismo codo: 5 palmos y medio. La cuenta es 7 × 220/280 = 5,5.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap reveal">
+    <h2>El círculo sale solo</h2>
+    <p class="lead">Imagina un círculo cuyo radio es la altura. Su vuelta mide 2π veces esa altura. La vuelta de la base mide 4 lados. Con 440 codos de lado y 280 de alto, 4 × 440 / 280 = 44/7 = 6,2857. Dos veces π es 6,2832. Van separadas un 0,040 %.</p>
+    <div class="split">
+      <figure>
+        <svg viewBox="0 0 520 190" role="img" aria-label="El triángulo de la sección al lado de un semicírculo del mismo alto">
+          <polygon class="face" points="16,170 220,170 118,40"/>
+          <line class="ghost" x1="118" y1="40" x2="118" y2="170"/>
+          <path class="dim" d="M236,170 A130,130 0 0 1 496,170"/>
+          <line class="dim" x1="236" y1="170" x2="496" y2="170"/>
+          <line class="dim" x1="366" y1="170" x2="366" y2="40"/>
+          <line class="ghost" x1="118" y1="40" x2="366" y2="40"/>
+        </svg>
+        <figcaption class="cap">La raya de arriba une las dos cimas: miden lo mismo. En el círculo, esa raya vertical es el radio. Aquí se ve la mitad de arriba. Recorrer la base y recorrer el círculo entero da casi el mismo paso.</figcaption>
+      </figure>
+      <ul class="keys">
+        <li><span>4 lados</span><b>1.760 codos</b></li>
+        <li><span>Altura</span><b>280 codos</b></li>
+        <li><span>Vuelta / altura</span><b>6,2857</b></li>
+        <li><span>2π</span><b>6,2832</b></li>
+      </ul>
     </div>
   </div>
 </section>
@@ -175,59 +256,94 @@ footer p{max-width:70ch}
 <section>
   <div class="wrap reveal split">
     <div>
-      <p class="big">76,30°</p>
-      <h2>Ese número es el ángulo de la cúspide</h2>
-      <p class="lead">En el corte por el centro de una cara, los dos ángulos de la base son el de la pendiente. 180 − 2 × 51,85 = 76,30. El vídeo escribe 4 × 51,85 / 76,30 = e (99,998 %). La división da 2,71822. El número e es 2,71828. El cociente es el 99,998 % que dice el paréntesis. Es una propiedad de este grado, porque la cúspide es el mismo ángulo escrito de otra forma.</p>
+      <h2>La proporción áurea es el mismo triángulo</h2>
+      <p class="lead">La cara inclinada, desde el centro de un lado hasta la punta, mide √(14² + 11²) = √317. Partida por los 11 de la mitad de la base da 1,6186. La proporción áurea φ es 1,6180. Van separadas un 0,034 %. Si mueves el seked, el círculo y esta proporción se mueven a la vez. No son dos hallazgos.</p>
+      <ul class="keys">
+        <li><span>Mitad de la base</span><b>11</b></li>
+        <li><span>Altura</span><b>14</b></li>
+        <li><span>Cara inclinada</span><b>17,80</b></li>
+        <li><span>17,80 / 11</span><b>1,6186</b></li>
+      </ul>
     </div>
-    <svg class="motif" viewBox="0 0 200 160" role="img" aria-label="Triángulo de la sección: base 51,85 grados y cúspide 76,30 grados">
-      <polygon points="100,18 18,142 182,142" fill="none" stroke="currentColor" stroke-width="3"/>
-      <text x="86" y="36" font-size="11" font-family="Public Sans,sans-serif">76,30°</text>
-      <text x="22" y="136" font-size="11" font-family="Public Sans,sans-serif">51,85°</text>
-      <text x="138" y="136" font-size="11" font-family="Public Sans,sans-serif">51,85°</text>
-    </svg>
+    <figure>
+      <svg viewBox="0 0 420 280" role="img" aria-label="El mismo triángulo, con la cara inclinada marcada">
+        <polygon class="face" points="24,250 304,250 164,72"/>
+        <line class="dim" x1="164" y1="72" x2="164" y2="250"/>
+        <line class="dim" x1="164" y1="250" x2="304" y2="250" stroke-width="5"/>
+      </svg>
+      <figcaption class="cap">La raya gruesa es la mitad de la base. La cara verde, de la punta a esa mitad, es la que se compara con φ.</figcaption>
+    </figure>
   </div>
 </section>
 
-<section class="band">
+<section class="band" id="calculo">
   <div class="wrap reveal">
-    <h2>Las cuatro ecuaciones del vídeo, rehechas</h2>
-    <p class="lead">El vídeo de geometría las escribe con el ángulo 51,85° y un porcentaje entre paréntesis. La tangente igual a 4/π es la frase «el perímetro partido por el doble de la altura es π». El coseno igual a 1/φ es «la apotema partida por el semilado es φ». El seno es el producto de las dos, así que no añade un tercer diseño. φ = (1+√5)/2.</p>
+    <h2>Mueve la pendiente y las dos se alejan juntas</h2>
+    <p class="lead">La base se queda en los 230,364 m de Cole. Solo cambia el ángulo. El seked justo es 51,84°. El vídeo redondea a 51,85°, que es 51°51′.</p>
+    <div class="row">
+      <div class="card">
+        <label class="sl" for="ang">Ángulo de la cara
+          <input id="ang" type="range" min="50" max="54" step="0.01" value="51.84">
+        </label>
+        <div class="out">
+          <p><span>Altura</span><b id="o-h">—</b></p>
+          <p><span>Vuelta de la base</span><b id="o-p">—</b></p>
+          <p><span>Vuelta / (2 × altura)</span><b id="o-r">—</b></p>
+          <p><span>π</span><b>3,14159</b></p>
+        </div>
+        <p class="cap" id="o-cap"></p>
+      </div>
+      <div class="card">
+        <h3>Hueco de cada fórmula del vídeo</h3>
+        <p class="cap">Con el ángulo del control. El seno repite la tangente por el coseno, así que la cuarta barra no es una cuarta idea.</p>
+        <div class="chart" id="bars"></div>
+        <p class="cap" id="bar-note"></p>
+      </div>
+    </div>
+    <div class="card" style="margin-top:.9rem">
+      <h3>De 50° a 54°, las dos curvas bajan en el mismo sitio</h3>
+      <p class="cap">Línea continua: cuánto se aleja la vuelta del círculo. Línea a trazos: cuánto se aleja la cara de φ. El punto es el ángulo del control.</p>
+      <div class="chart" id="lines"></div>
+      <p class="legend"><span style="--c:var(--series)">alejamiento de π</span><span style="--c:var(--muted)">alejamiento de φ</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="inkband">
+  <div class="wrap reveal">
+    <h2>Las cuatro fórmulas del vídeo son este ángulo escrito de cuatro maneras</h2>
+    <p class="lead">El vídeo usa 51,85°. La cúspide del triángulo es lo que sobra: 180 − 2 × 51,85 = 76,30. Por eso aparece el 76,30. La tangente igual a 4/π es el círculo. El coseno igual a 1/φ es la cara inclinada. El seno es el producto de las dos.</p>
     <div class="scroller">
       <table id="eq">
-        <caption class="cap">Acuerdo de cada fórmula con la constante. El primer clic en una columna ordena de mayor a menor.</caption>
+        <caption>El primer clic en una columna ordena de mayor a menor. Los porcentajes son el cociente con la constante.</caption>
         <thead><tr>
-          <th><button type="button" aria-sort="none">Relación</button></th>
-          <th><button type="button" aria-sort="none">Sale</button></th>
-          <th><button type="button" aria-sort="none">Constante</button></th>
+          <th><button type="button" aria-sort="none">Fórmula</button></th>
+          <th><button type="button" aria-sort="none">Qué es en el triángulo</button></th>
           <th><button type="button" aria-sort="none">% del vídeo</button></th>
-          <th><button type="button" aria-sort="none">% recalculado</button></th>
+          <th><button type="button" aria-sort="none">% rehecho</button></th>
         </tr></thead>
         <tbody>
           <tr>
-            <td data-n="4 por 51,85 entre 76,30">4 × 51,85 / 76,30</td>
-            <td data-n="2.71822">2,71822</td>
-            <td data-n="2.71828">e = 2,71828</td>
+            <td data-n="4 por 51,85 entre 76,30">4 × 51,85 / 76,30 ≈ e</td>
+            <td data-n="cuspide">La cúspide es el resto de 180°</td>
             <td data-n="99.998">99,998 %</td>
             <td data-n="99.998">99,998 %</td>
           </tr>
           <tr>
-            <td data-n="tangente">tan 51,85°</td>
-            <td data-n="1.27306">1,27306</td>
-            <td data-n="1.27324">4/π = 1,27324</td>
+            <td data-n="tangente">tan 51,85° ≈ 4/π</td>
+            <td data-n="circulo">La vuelta de la base frente al círculo</td>
             <td data-n="99.99">99,99 %</td>
             <td data-n="99.986">99,986 %</td>
           </tr>
           <tr>
-            <td data-n="coseno">cos 51,85°</td>
-            <td data-n="0.61772">0,61772</td>
-            <td data-n="0.61803">1/φ = 0,61803</td>
+            <td data-n="coseno">cos 51,85° ≈ 1/φ</td>
+            <td data-n="cara">La cara inclinada frente a la mitad de la base</td>
             <td data-n="99.95">99,95 %</td>
             <td data-n="99.950">99,950 %</td>
           </tr>
           <tr>
-            <td data-n="seno">sin 51,85°</td>
-            <td data-n="0.78640">0,78640</td>
-            <td data-n="0.78691">4/(πφ) = 0,78691</td>
+            <td data-n="seno">sin 51,85° ≈ 4/(πφ)</td>
+            <td data-n="producto">Tangente por coseno</td>
             <td data-n="99.94">99,94 %</td>
             <td data-n="99.935">99,935 %</td>
           </tr>
@@ -237,60 +353,56 @@ footer p{max-width:70ch}
   </div>
 </section>
 
-<section class="inkband">
+<section id="codo">
   <div class="wrap reveal">
-    <h2>De dónde sale 51°51′: cinco palmos y medio</h2>
-    <p class="lead">El vídeo atribuye 51°51′ (51,85° en decimal: 51 + 51/60) a las piedras de revestimiento que midieron Flinders Petrie y J. H. Cole. El mismo perfil es el seked de 5½ palmos. Un codo de altura son 7 palmos. En el modelo de 440 codos de lado y 280 de alto, la carrera horizontal por cada codo de subida es 220/280 codos, y por 7 palmos: 7 × 220/280 = 5,5 palmos. El ángulo es arctan(14/11) = 51,843°. Con ese seked el perímetro entre la altura es 1760/280 = 44/7 = 6,28571, un 0,040 % por encima de 2π (6,28319). La apotema entre el semilado es √317 / 11 = 1,61859, un 0,034 % por encima de φ (1,61803). Las dos cercanías viajan juntas: si cambias el seked, las dos se mueven.</p>
-  </div>
-</section>
-
-<section>
-  <div class="wrap reveal">
-    <h2>365,24 y tres longitudes llamadas codo</h2>
-    <p class="lead">El vídeo de geometría dice que, en codos, el perímetro es 365,24, los días del año. El clip de History dice que un lado, a la altura media de los encajes, mide 365,24 codos de la pirámide, y que ese codo es el diámetro polar partido por 25 millones. Con el lado medio de Cole, 230,364 m, cada frase fabrica una unidad distinta.</p>
-    <div class="scroller">
-      <table id="codos">
-        <caption class="cap">La misma base, cuatro unidades. El año tropical dura 365,242 días.</caption>
-        <thead><tr>
-          <th><button type="button" aria-sort="none">Unidad</button></th>
-          <th><button type="button" aria-sort="none">De dónde sale</button></th>
-          <th><button type="button" aria-sort="none">Metros</button></th>
-        </tr></thead>
-        <tbody>
-          <tr>
-            <td data-n="codo del lado 440">Codo del modelo 440</td>
-            <td data-n="lado entre 440">230,364 m / 440</td>
-            <td data-n="0.52355">0,5236</td>
-          </tr>
-          <tr>
-            <td data-n="perimetro 365">Unidad para que el perímetro sea 365,24</td>
-            <td data-n="4 lados entre 365,24">4 × 230,364 / 365,24</td>
-            <td data-n="2.52288">2,523</td>
-          </tr>
-          <tr>
-            <td data-n="lado 365">Unidad para que un lado sea 365,242</td>
-            <td data-n="lado entre 365,242">230,364 / 365,242</td>
-            <td data-n="0.63072">0,631</td>
-          </tr>
-          <tr>
-            <td data-n="polar">Diámetro polar / 25.000.000</td>
-            <td data-n="WGS84">2 × 6.356.752,3142 m / 25.000.000</td>
-            <td data-n="0.50854">0,5085</td>
-          </tr>
-        </tbody>
-      </table>
+    <h2>365,242 es un año. El codo es una vara</h2>
+    <p class="lead">El año trópico dura 365,242 días. Es un recuento de días. El codo de esta base mide 0,524 m. Son cosas distintas. El vídeo de geometría escribe que el perímetro, en codos, es 365,24. Con el codo de la obra el perímetro es 1.760.</p>
+    <div class="versus">
+      <article>
+        <span>Vuelta de la base</span>
+        <strong>1.760</strong>
+        <span>codos de 0,524 m</span>
+      </article>
+      <article class="year">
+        <span>Año trópico</span>
+        <strong>365,242</strong>
+        <span>días, no metros</span>
+      </article>
     </div>
-    <p class="cap">En codos de 0,5236 m el perímetro mide 1.760. El 365,24 del óvalo es el número de días, escrito como si fuera esa medida.</p>
+    <h3>Si fuerzas el 365,242 a ser una longitud, sale otra vara</h3>
+    <p class="lead">Las cuatro barras usan la misma escala. Las dos primeras casi coinciden y aun así no son iguales. La del año es más larga, o mucho más larga, según dividas el lado o el perímetro.</p>
+    <div class="rulers">
+      <div class="ruler">
+        <span>Diámetro polar / 25 millones</span>
+        <i style="width:20.2%"></i>
+        <b>0,509 m. Lo dice el clip de History. El codo de la base es más largo.</b>
+      </div>
+      <div class="ruler">
+        <span>Codo de los 440 del lado</span>
+        <i style="width:20.8%"></i>
+        <b>0,524 m. 230,364 m / 440.</b>
+      </div>
+      <div class="ruler">
+        <span>Lado / 365,242</span>
+        <i style="width:25%"></i>
+        <b>0,631 m. La vara que haría falta para que un lado «sea» el año.</b>
+      </div>
+      <div class="ruler">
+        <span>Perímetro / 365,242</span>
+        <i style="width:100%"></i>
+        <b>2,523 m. La vara que haría falta para que la vuelta «sea» el año. Cabe casi cinco codos reales.</b>
+      </div>
+    </div>
   </div>
 </section>
 
 <section class="band">
   <div class="wrap reveal">
-    <h2>Los cuatro lados que midió Cole en 1925</h2>
-    <p class="lead">El vídeo cita el levantamiento y no imprime estos metros. Son la base de la media 230,364 m usada arriba. En codos de 0,5236 m, 440 codos son 230,38 m.</p>
+    <h2>Los cuatro lados, en centímetros</h2>
+    <p class="lead">Cole los midió en 1925. El más largo y el más corto se separan 20,1 cm en más de 230 m. En codos de 0,524 m, 440 codos son 230,38 m.</p>
     <div class="scroller">
       <table id="lados">
-        <caption class="cap">Lados de la base, J. H. Cole, 1925. El ángulo de las esquinas no es el de la cara.</caption>
+        <caption>Lados de la base, J. H. Cole, 1925.</caption>
         <thead><tr>
           <th><button type="button" aria-sort="none">Lado</button></th>
           <th><button type="button" aria-sort="none">Metros</button></th>
@@ -304,111 +416,146 @@ footer p{max-width:70ch}
         </tbody>
       </table>
     </div>
+    <div class="scroller" style="margin-top:1rem">
+      <table id="esquinas">
+        <caption>Esquinas del mismo levantamiento. 90° sería una esquina perfecta.</caption>
+        <thead><tr>
+          <th><button type="button" aria-sort="none">Esquina</button></th>
+          <th><button type="button" aria-sort="none">Ángulo</button></th>
+          <th><button type="button" aria-sort="none">Separación de 90°</button></th>
+        </tr></thead>
+        <tbody>
+          <tr><td data-n="noroeste">Noroeste</td><td data-n="89.999444">89°59′58″</td><td data-n="2">2″</td></tr>
+          <tr><td data-n="noreste">Noreste</td><td data-n="90.050556">90°03′02″</td><td data-n="182">3′02″</td></tr>
+          <tr><td data-n="sureste">Sureste</td><td data-n="89.940833">89°56′27″</td><td data-n="213">3′33″</td></tr>
+          <tr><td data-n="suroeste">Suroeste</td><td data-n="90.009167">90°00′33″</td><td data-n="33">33″</td></tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </section>
 
 <section>
   <div class="wrap reveal">
-    <h2>Potencias de diez escritas en el vídeo</h2>
-    <p class="lead">Estas líneas están en pantalla, en «pyramid inches» (PI en el rótulo, no el número π). La cuenta, hecha con los factores que se leen, reproduce el resultado del vídeo. Al lado, el valor que se usa hoy para esa magnitud. El hueco es el del factor 10 elevado a n, no un error de multiplicar.</p>
-    <div class="scroller">
-      <table id="pot">
-        <caption class="cap">Lo que multiplica el vídeo y a qué magnitud lo compara. Millas terrestres de 1.609,344 m.</caption>
-        <thead><tr>
-          <th><button type="button" aria-sort="none">Frase de la pantalla</button></th>
-          <th><button type="button" aria-sort="none">La operación</button></th>
-          <th><button type="button" aria-sort="none">Sale</button></th>
-          <th><button type="button" aria-sort="none">Referencia</button></th>
-        </tr></thead>
-        <tbody>
-          <tr>
-            <td data-n="sol radio">2 × perímetro del fondo del sarcófago × 10⁸ = radio medio del Sol</td>
-            <td data-n="270.45">270,45378502 PI × 10⁸ / 63.291,58</td>
-            <td data-n="427314">427.314 millas</td>
-            <td data-n="432288">432.288 millas (radio 695.700 km)</td>
-          </tr>
-          <tr>
-            <td data-n="sol distancia">Altura × 10⁹ = distancia media al Sol</td>
-            <td data-n="5813">5.813,2355653 × 10⁹ / 63.291,58</td>
-            <td data-n="91848482">91.848.482 millas</td>
-            <td data-n="92955807">92.955.807 millas (1 ua)</td>
-          </tr>
-          <tr>
-            <td data-n="luna">Pasaje del Jubileo × 7 × 10⁷ = distancia a la Luna</td>
-            <td data-n="215.97">215,973053 × 7 × 10⁷ / 63.291,58</td>
-            <td data-n="238865">238.865 millas</td>
-            <td data-n="238856">238.856 millas (384.399 km)</td>
-          </tr>
-          <tr>
-            <td data-n="masa">Peso 5.955.000 toneladas × 10⁸ = masa de la Tierra</td>
-            <td data-n="5955000">5.955.000 × 10⁸</td>
-            <td data-n="5.955e14">5,955 × 10¹⁴ toneladas</td>
-            <td data-n="5.972e21">5,972 × 10²¹ toneladas</td>
-          </tr>
-          <tr>
-            <td data-n="radio">Codo sagrado × 10⁷ = radio polar</td>
-            <td data-n="25">25 PI × 10⁷ × 1,001081 / 12 / 5.280</td>
-            <td data-n="3949.97">3.949,97 millas</td>
-            <td data-n="3949.9">3.949,9 millas (radio polar WGS84)</td>
-          </tr>
-        </tbody>
-      </table>
+    <h2>Al lado, la de Kefrén es un 3-4-5</h2>
+    <p class="lead">La pirámide vecina usa otro seked: 5 palmos y 1 dedo, o sea 5,25. Como el palmo son 4 dedos, 7 / 5,25 = 4/3. Entra 3, sube 4, y la cara del corte mide 5. Petrie la midió cerca de 53°10′. Ese triángulo no cae sobre 2π: la vuelta partida por la altura es 6, y 2π es 6,28. Se aleja un 4,5 %. La de Keops es la que cae cerca, porque eligieron 14 y 11, no porque toda pirámide lo haga.</p>
+    <div class="pair">
+      <figure>
+        <svg viewBox="0 0 360 250" role="img" aria-label="Corte de Keops, más tendido">
+          <polygon class="face" points="48,230 312,230 180,62"/>
+        </svg>
+        <figcaption class="cap">Keops. Entra 11, sube 14. Vuelta / altura = 6,286.</figcaption>
+      </figure>
+      <figure>
+        <svg viewBox="0 0 360 250" role="img" aria-label="Corte de Kefrén, un poco más empinado">
+          <polygon class="face" points="48,230 312,230 180,54"/>
+        </svg>
+        <figcaption class="cap">Kefrén. Entra 3, sube 4, la hipotenusa es 5. Vuelta / altura = 6.</figcaption>
+      </figure>
     </div>
-    <p class="cap">63.291,58 pyramid inches por milla es el cambio de unidad que usa la propia pantalla en la distancia al Sol. El radio polar sale de 25 pulgadas por 10⁷ y de un ajuste de 1,001081: la longitud de la pirámide no entra en esa línea. La masa terrestre queda unas diez millones de veces por encima del producto 5,955 × 10¹⁴.</p>
   </div>
 </section>
 
 <section class="band">
   <div class="wrap reveal split">
     <div>
-      <h2>Tierra y Luna, el mismo ángulo</h2>
-      <p class="lead">El vídeo cierra con el dibujo de John Michell: la Luna apoyada en la Tierra, la punta del triángulo en el centro de la Luna y la base en el ecuador. Con el radio medio terrestre de 6.371 km y el lunar de 1.737,4 km, la tangente es (6.371 + 1.737,4) / 6.371 = 1,2729. El ángulo es 51,84°. arctan(4/π) es 51,85°. Es la misma pendiente otra vez: el cociente de radios cae junto a 4/π − 1.</p>
-      <p class="lead">La latitud que cita el clip de History se compara con la velocidad de la luz moviendo la coma. 299.792.458 m/s entre diez millones es 29,9792458. La coordenada publicada 29°58′45″ N es 29,9791667°. La resta es 0,000079°, unos 9 m en el terreno. Son los mismos dígitos en grados y en metros por segundo.</p>
+      <h2>El tamaño, en tres multiplicaciones</h2>
+      <ol class="steps">
+        <li><i>1</i><span>Lado por lado: 230,364 × 230,364 = 53.067,6 m².</span></li>
+        <li><i>2</i><span>Por la altura del modelo: 53.067,6 × 146,595 = 7.779.430 m³.</span></li>
+        <li><i>3</i><span>Una pirámide es un tercio de ese prisma. 7.779.430 / 3 = 2.593.143 m³.</span></li>
+      </ol>
+      <p class="cap">Es el volumen del sólido con el revestimiento. La altura que se publica del núcleo que queda, ya sin ese revestimiento, es 138,5 m.</p>
     </div>
-    <svg class="motif" viewBox="0 0 220 200" role="img" aria-label="La Luna sobre la Tierra, dentro del triángulo de la sección">
-      <polygon points="110,8 8,188 212,188" fill="none" stroke="currentColor" stroke-width="3"/>
-      <circle cx="110" cy="132" r="52" fill="#18E667"/>
-      <circle cx="110" cy="78" r="14" fill="currentColor"/>
-    </svg>
+    <div>
+      <h2>El norte, en el tamaño de la Luna</h2>
+      <p class="lead">3/60 de grado son 3 minutos de arco. La Luna llena mide unos 31 minutos. El desvío que citan los dos vídeos es una décima parte de ese disco. La precesión mueve las estrellas alrededor del polo. El norte de la planta es el eje de la Tierra, y esa cuenta no lo gira esos 3 minutos.</p>
+      <figure>
+        <svg viewBox="0 0 360 170" role="img" aria-label="Un disco grande, la Luna, y un hueco pequeño de una décima parte">
+          <circle class="dim" cx="90" cy="80" r="62"/>
+          <circle class="face" cx="250" cy="80" r="6"/>
+        </svg>
+        <figcaption class="cap">A la izquierda, el tamaño angular de la Luna. A la derecha, 3 minutos, a la misma escala.</figcaption>
+      </figure>
+    </div>
   </div>
 </section>
 
 <section>
   <div class="wrap reveal">
-    <h2>Lo demás que nombran, con la cuenta corta</h2>
-    <div class="row">
-      <article class="card">
-        <h3>Norte, a 3/60 de grado</h3>
-        <p>3/60 = 0,05° = 3′. Los dos vídeos dan esa cifra. El clip añade la precesión: el polo celeste se mueve entre las estrellas. El norte de la planta es el eje de rotación, y la precesión deja ese meridiano en su sitio.</p>
-      </article>
-      <article class="card">
-        <h3>Centro de la tierra firme</h3>
-        <p>El clip dice que los círculos máximos por los rumbos cardinales e intermedios cruzan más tierra que desde cualquier otro punto, y que uno de los cruces cae en la pirámide. No da el mapa ni el porcentaje. Sin esa malla no hay una cifra que repetir.</p>
-      </article>
-      <article class="card">
-        <h3>Cámara del Rey, 3-4-5</h3>
-        <p>El vídeo dice que sus medidas siguen un triángulo pitagórico 3-4-5. En pantalla no hay cotas. La identidad es 3² + 4² = 9 + 16 = 25 = 5².</p>
-      </article>
-      <article class="card">
-        <h3>Ocho caras y la curvatura</h3>
-        <p>Al amanecer de los equinoccios, visto desde el aire, la sombra marca un quiebro en el centro de cada cara. La flecha de un arco terrestre de 230 m es (115)² / (2 × 6.371.000) = 1,0 mm. El quiebro que se ve desde el aire es de otro tamaño.</p>
-      </article>
-      <article class="card">
-        <h3>Cuadrar el círculo</h3>
-        <p>Si el radio del círculo es la altura y el perímetro de la base iguala la circunferencia, la altura es 2/π veces el semilado. Eso es otra vez tan = 4/π. En 1882 se probó que π es trascendente: con regla y compás el círculo no se cuadra. La pirámide se le acerca.</p>
-      </article>
-      <article class="card">
-        <h3>555,5 pies y 6.666 pulgadas</h3>
-        <p>555,5 × 12 = 6.666. Es la misma longitud en dos unidades. El vídeo la iguala a la altura del <a href="https://www.nps.gov/wamo/">Washington Monument</a> y a la longitud de la <a href="https://www.stpauls.co.uk/">catedral de San Pablo</a>. El diámetro del círculo circunscrito, con base 755,775 pies y 51°51′, sale 777,9 pies; la pantalla redondea 777,7 y anota un 99,97 %.</p>
-      </article>
+    <h2>Tierra y Luna repiten el mismo ángulo</h2>
+    <div class="split">
+      <figure>
+        <svg viewBox="0 0 420 280" role="img" aria-label="La Luna apoyada en la Tierra, dentro del corte de la pirámide">
+          <polygon class="dim" points="210,18 28,250 392,250"/>
+          <circle class="face" cx="210" cy="176" r="70"/>
+          <circle cx="210" cy="96" r="18" fill="currentColor"/>
+        </svg>
+        <figcaption class="cap">El dibujo de John Michell, en limpio. La punta cae en el centro de la Luna. La base, en el ecuador.</figcaption>
+      </figure>
+      <div>
+        <p class="lead">Radio medio de la Tierra, 6.371 km. Radio medio de la Luna, 1.737,4 km. La tangente es (6.371 + 1.737,4) / 6.371 = 1,2729. El ángulo sale 51,84°. arctan(4/π) sale 51,85°. Es otra vez la pendiente de 14 a 11, porque el cociente de los dos radios cae junto a 4/π − 1.</p>
+        <p class="lead">La latitud 29°58′45″ N es 29,97917°. La luz, 299.792.458 m/s, partida por diez millones es 29,97925. Se parecen al mover la coma. Una cifra está en grados y la otra en metros por segundo. En el suelo son unos 9 m.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="band" id="mapa">
+<section class="band">
+  <div class="wrap reveal">
+    <h2>Lo que los vídeos multiplican por potencias de diez</h2>
+    <p class="lead">La multiplicación de la pantalla está bien hecha. La comparación con el Sol, la Luna o la Tierra es otra cosa. PI en el rótulo significa «pyramid inch», una pulgada un poco retocada, no el número π.</p>
+    <div class="scroller">
+      <table id="pot">
+        <caption>Al lado de cada producto, la magnitud que se usa hoy. Millas de 1.609,344 m.</caption>
+        <thead><tr>
+          <th><button type="button" aria-sort="none">Qué comparan</button></th>
+          <th><button type="button" aria-sort="none">La operación de la pantalla</button></th>
+          <th><button type="button" aria-sort="none">Sale</button></th>
+          <th><button type="button" aria-sort="none">Hoy</button></th>
+        </tr></thead>
+        <tbody>
+          <tr>
+            <td data-n="sol radio">Radio del Sol</td>
+            <td data-n="270.45">270,454 pyramid inches × 10⁸ / 63.291,58</td>
+            <td data-n="427314">427.314 millas</td>
+            <td data-n="432288">432.288 millas</td>
+          </tr>
+          <tr>
+            <td data-n="sol distancia">Distancia al Sol</td>
+            <td data-n="5813">5.813,24 × 10⁹ / 63.291,58</td>
+            <td data-n="91848482">91.848.482 millas</td>
+            <td data-n="92955807">92.955.807 millas</td>
+          </tr>
+          <tr>
+            <td data-n="luna">Distancia a la Luna</td>
+            <td data-n="215.97">215,973 × 7 × 10⁷ / 63.291,58</td>
+            <td data-n="238865">238.865 millas</td>
+            <td data-n="238856">238.856 millas</td>
+          </tr>
+          <tr>
+            <td data-n="masa">Masa de la Tierra</td>
+            <td data-n="5955000">5.955.000 toneladas × 10⁸</td>
+            <td data-n="5.955e14">5,955 × 10¹⁴ t</td>
+            <td data-n="5.972e21">5,972 × 10²¹ t</td>
+          </tr>
+          <tr>
+            <td data-n="radio polar">Radio polar</td>
+            <td data-n="25">25 × 10⁷ × 1,001081 / 12 / 5.280</td>
+            <td data-n="3949.97">3.949,97 millas</td>
+            <td data-n="3949.9">3.949,9 millas</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="cap">El radio polar sale porque 25 de esas pulgadas, por 10⁷, ya es la definición que da ese radio. La longitud de la pirámide no entra. La masa se queda corta por un factor de unos diez millones. La Luna se acerca solo después de multiplicar por 7 × 10⁷. El hueco de las caras, el que se ve desde el aire en el equinoccio, no es la curvatura terrestre: en 230 m esa curvatura flecha 1,0 mm.</p>
+  </div>
+</section>
+
+<section id="mapa">
   <div class="wrap reveal">
     <h2>Dónde está</h2>
-    <p class="lead"><a href="https://whc.unesco.org/en/list/86/">Menfis y su necrópolis</a>, en la lista de la Unesco. Marca en 29°58′45″ N, 31°08′03″ E.</p>
+    <p class="lead"><a href="https://whc.unesco.org/en/list/86/">Menfis y su necrópolis</a>, en la lista de la Unesco. La vecina es la <a href="https://en.wikipedia.org/wiki/Pyramid_of_Khafre">pirámide de Kefrén</a>. Marca en 29°58′45″ N, 31°08′03″ E.</p>
     <iframe class="map" title="Mapa de la Gran Pirámide en OpenStreetMap" src="https://www.openstreetmap.org/export/embed.html?bbox=31.124%2C29.970%2C31.145%2C29.989&amp;layer=mapnik&amp;marker=29.979167%2C31.134167"></iframe>
     <p class="acts">
       <a class="go" href="#mapa">Ver mapa</a>
@@ -417,9 +564,93 @@ footer p{max-width:70ch}
   </div>
 </section>
 
+<section id="oficio">
+  <div class="wrap reveal">
+    <h2>Qué se podía calcular entonces</h2>
+    <p class="lead">Keops es de hacia 2600 a. C. Casi todo lo que parece un descubrimiento distinto es la misma pendiente: 14 de alto por 11 en la mitad de la base, o sea 5 palmos y medio de seked. Esa pendiente se pide con codos y palmos. π, φ y el número e son nombres muy posteriores. La piedra no los necesita para estar en pie.</p>
+    <p class="lead">El calendario de entonces no es el nuestro. El año civil egipcio tenía 365 días: 12 meses de 30 y 5 días sueltos, sin bisiesto. Se deslizaba sobre las estaciones. El día añadido cada cuatro años es el calendario juliano, del 46 a. C. El 365,242 ya es la duración moderna del año trópico.</p>
+    <div class="ledger">
+      <article class="card">
+        <p class="tag yes">Se podía encargar</p>
+        <h3>5 palmos y medio</h3>
+        <p>Un codo son 7 palmos. 7 × 220/280 = 5,5. Por eso el corte es 14 de alto y 11 de mitad: 280 y 220 codos.</p>
+        <p>Así escribía Egipto una pendiente. El papiro Rhind, copiado hacia 1550 a. C. de un texto del Imperio Medio, trae problemas de seked. Es posterior a Keops. No conservamos la hoja de esta obra. Sí conservamos la unidad con la que se pide.</p>
+      </article>
+      <article class="card">
+        <p class="tag yes">Se podía encargar</p>
+        <h3>Base cuadrada y esquinas casi rectas</h3>
+        <p>Cole, en 1925: las cuatro esquinas se apartan de 90° entre 2 segundos y 3 minutos y 33 segundos de arco. El lado más largo y el más corto se separan 20,1 cm.</p>
+        <p>Un ángulo recto y un lado repetido se marcan en el suelo. No hace falta un teorema griego. La precisión es de la obra, no de un número bautizado después.</p>
+      </article>
+      <article class="card">
+        <p class="tag yes">Se podía encargar</p>
+        <h3>El norte, a unos 3 minutos</h3>
+        <p>3/60 de grado. El disco de la Luna mide unos 31 minutos: el desvío es una décima parte.</p>
+        <p>Apuntar de noche a una estrella cabe en lo que se hace a simple vista. El procedimiento de esta pirámide no se ha conservado. π no interviene.</p>
+      </article>
+      <article class="card">
+        <p class="tag later">La piedra sí. El nombre, no</p>
+        <h3>La vuelta de la base y el círculo</h3>
+        <p>4 × 440 / 280 = 44/7 = 6,2857. Dos veces π es 6,2832. Van separadas un 0,040 %. 44/7 es el doble de 22/7: en cuanto eliges 440 y 280, el acercamiento a π ya está hecho.</p>
+        <p>Egipto no escribió π. En el papiro Rhind el área del círculo es (8/9 del diámetro)², o sea una aproximación de 3,160, no 3,142 ni 22/7. El 22/7 es Arquímedes, en Grecia, en el siglo III a. C. Se puede encargar la pirámide sin nombrar π. No hay un texto del reinado que diga que la encargaron por el círculo.</p>
+      </article>
+      <article class="card">
+        <p class="tag later">La piedra sí. El nombre, no</p>
+        <h3>La cara inclinada y φ</h3>
+        <p>√(11² + 14²) / 11 = 1,6186. φ es 1,6180. Un 0,034 % por encima. Es la hipotenusa del mismo triángulo, no una segunda decisión.</p>
+        <p>φ con nombre, la proporción extrema y media, es Euclides, hacia 300 a. C. No aparece en los papiros de cuentas egipcios.</p>
+      </article>
+      <article class="card">
+        <p class="tag later">La piedra sí. El nombre, no</p>
+        <h3>Las cuatro fórmulas del ángulo</h3>
+        <p>Con 51,85° salen, frente a e, a 4/π, a 1/φ y a 4/(πφ): 99,998 %, 99,986 %, 99,950 % y 99,935 %. El seno es la tangente por el coseno. No son cuatro diseños.</p>
+        <p>El número e es del siglo XVIII, con Bernoulli y Euler. No se podía calcular en Egipto. Las cuatro cuentas miran el mismo ángulo con herramientas de mucho después.</p>
+      </article>
+      <article class="card">
+        <p class="tag yes">Se podía encargar</p>
+        <h3>Kefrén, al lado: un 3-4-5 exacto</h3>
+        <p>Seked de 5 palmos y 1 dedo, o sea 5,25. 7 / 5,25 = 4/3. Mitad de la base, altura y cara quedan en 3, 4 y 5. La vuelta partida por la altura es 6. Dos veces π es 6,28: aquí π no sale.</p>
+        <p>Misma herramienta, otra fracción. Una cuerda de 3, 4 y 5 cierra un ángulo recto sin el teorema general, que es posterior. Sirve de contraste: cuando el seked cambia, las coincidencias con π se van.</p>
+      </article>
+      <article class="card">
+        <p class="tag no">No cuadra</p>
+        <h3>El codo y el año de 365,242 días</h3>
+        <p>Con el codo de la obra el perímetro es 1.760 codos, no 365,242. El año trópico moderno dura 365,242 días. Son un recuento de días, no una vara.</p>
+        <p>El año civil egipcio tenía 365 días y no añadía el bisiesto, así que se iba de las estaciones. Miraban la salida de Sirio y veían ese desliz: el ciclo sótico, unos 1.460 años. No metían un día cada cuatro años. Si se fuerza el 365,242 a ser una longitud, la vara sale de 0,631 m (un lado) o de 2,523 m (el perímetro). El codo de los 440 es 0,524 m. No coinciden.</p>
+      </article>
+      <article class="card">
+        <p class="tag later">La cifra es de ahora</p>
+        <h3>El volumen, 2.593.143 m³</h3>
+        <p>Lado medio al cuadrado, por la altura del modelo, entre 3. Usa las medidas de Cole y el 280/440.</p>
+        <p>El papiro de Moscú, problema 14, calcula una pirámide truncada. Es Imperio Medio, posterior a Keops. No es la cuenta de esta obra, ni deja escritos estos metros cúbicos.</p>
+      </article>
+      <article class="card">
+        <p class="tag no">No es una medida egipcia</p>
+        <h3>Tierra, Luna y el mismo ángulo</h3>
+        <p>Con los radios medios de hoy, 6.371 km y 1.737,4 km, la tangente (Tierra + Luna) / Tierra da 51,84°. Otra vez el 14 por 11, porque el cociente de los radios anda junto a 3,67.</p>
+        <p>Esos radios no se midieron en el Imperio Antiguo. El dibujo es de John Michell, en el siglo XX. Es la misma pendiente, leída en el cielo con números modernos.</p>
+      </article>
+      <article class="card">
+        <p class="tag no">No cuadra</p>
+        <h3>La latitud y la velocidad de la luz</h3>
+        <p>29°58′45″ N es 29,97917°. La luz, 299.792.458 m/s, partida por diez millones es 29,97925. En el suelo son unos 9 m.</p>
+        <p>Una cifra está en grados y la otra en metros por segundo. La primera medida seria de la luz es de 1676. El valor exacto, de 1983. Mover la coma no es un cálculo del reino.</p>
+      </article>
+      <article class="card">
+        <p class="tag no">No cuadra</p>
+        <h3>Sol, Luna, masa y radio polar</h3>
+        <p>La masa que escribe el vídeo se queda corta por un factor de unos diez millones. La Luna solo se acerca después de multiplicar por 7 × 10⁷. El radio polar sale de la definición de esa pulgada: el lado de la pirámide no entra en la cuenta. El hueco de las caras, el del equinoccio, no es la curvatura de la Tierra: en 230 m esa curvatura flecha 1,0 mm.</p>
+        <p>Es aritmética de la pantalla. No es un conocimiento que la obra conserve.</p>
+      </article>
+    </div>
+    <p class="lead" style="margin-top:1.1rem">Contadas aparte parecen demasiadas. Juntas son una: eliges 5 palmos y medio, en enteros, y π y φ salen después, con nombres que aún no existían. Kefrén eligió 5 palmos y un dedo y el círculo se separa. Lo que no es un descuido de medir es la ejecución: centímetros en más de 230 m, esquinas casi rectas, norte a pocos minutos.</p>
+    <p class="lead">Lo que no tenemos es la frase del arquitecto. Nadie ha dejado un texto del reinado que diga «lo hice por el círculo» o «lo hice por el año». El año, además, no está en el codo. Entre la piedra, que sí guarda el 14 por 11, y ese silencio, el motivo sigue en blanco. No hace falta un número posterior para levantar la pirámide. Con codo, palmo y seked se puede encargar. Con ese oficio no se encargan el número e, el año de 365,242 días ni la velocidad de la luz.</p>
+  </div>
+</section>
+
 <footer class="wrap">
-  <p>Vídeo de geometría: <a href="https://www.youtube.com/watch?v=bTv4cEfA5Ls">Geometry of The Great Pyramid</a>, canal Abstract Away, 4 de octubre de 2020, Shraddha Somani y Amit Nag. Clip: <a href="https://www.youtube.com/watch?v=dDgr4uvet-g">Ancient Aliens, temporada 12</a>, History, 7 de diciembre de 2019. Lados: J. H. Cole, Survey of Egypt, 1925. Radio polar: elipsoide WGS84, 6.356.752,3142 m. Luz: 299.792.458 m/s, definición del SI. Año tropical: 365,242 días, la cifra que usa el vídeo.</p>
-  <p>No entra aquí un levantamiento nuevo, las cotas interiores de la Cámara del Rey ni un recuento de costas del «centro de la tierra firme». Los factores 10ⁿ son los que se leen en pantalla.</p>
+  <p>Seked de 5½ y de 5¼: <a href="https://www.ucl.ac.uk/museums-static/digitalegypt/pyramids/angle.html">UCL, Digital Egypt</a>. El seked como cuenta, y el círculo por (8/9 del diámetro)²: <a href="https://www.britishmuseum.org/collection/object/Y_EA10058">papiro Rhind</a>, British Museum. Pirámide truncada: papiro de Moscú, problema 14. Lados y esquinas: J. H. Cole, Survey of Egypt, 1925. Piedras de revestimiento: Flinders Petrie, entre unos 51°47′ y 51°53′. Kefrén: seked 5,25 y pendiente publicada de unos 53°10′. 22/7: Arquímedes, siglo III a. C. φ con nombre: Euclides, hacia 300 a. C. El número e: siglo XVIII. Año civil egipcio: 365 días, sin bisiesto. Año trópico: 365,242 días, la cifra de los vídeos; el valor más fino es 365,2422. El bisiesto cada cuatro años: calendario juliano, 46 a. C. Radio polar: WGS84, 6.356.752,3142 m. Luz: 299.792.458 m/s.</p>
+  <p>Vídeo de geometría: <a href="https://www.youtube.com/watch?v=bTv4cEfA5Ls">Geometry of The Great Pyramid</a>, Abstract Away, 2020. Clip: <a href="https://www.youtube.com/watch?v=dDgr4uvet-g">Ancient Aliens, temporada 12</a>, History, 2019. No entra un levantamiento nuevo ni un recuento de costas del «centro de la tierra firme». La Cámara del Rey no trae cotas en el vídeo; el 3-4-5 que sí está medido es la pendiente de Kefrén.</p>
 </footer>
 </div>
 <script>
@@ -436,40 +667,39 @@ function pack(deg) {
   const ap = Math.hypot(h, BASE / 2) / (BASE / 2);
   const apex = 180 - 2 * deg;
   return {
-    h, peri, ratio,
+    h, peri, ratio, ap,
     ePct: (4 * deg / apex) / E * 100,
     piPct: t / (4 / PI) * 100,
     phiPct: Math.cos(rad(deg)) / (1 / PHI) * 100,
     sinPct: Math.sin(rad(deg)) / (4 / (PI * PHI)) * 100,
     piGap: Math.abs(ratio - PI) / PI * 100,
     phiGap: Math.abs(ap - PHI) / PHI * 100,
-    abovePi: ratio > PI,
-    abovePhi: ap > PHI
+    abovePi: ratio > PI
   };
 }
 
 function bars(el, labels, v) {
-  const W = 720, H = 260, L = 78, R = 12, T = 16, B = 40;
-  const max = Math.max(0.08, ...v) * 1.25;
+  const W = 720, H = 250, L = 84, R = 16, T = 18, B = 46;
+  const max = Math.max(0.08, ...v) * 1.28;
   const bw = (W - L - R) / v.length;
   const sy = x => T + (H - T - B) * (1 - x / max);
   let o = "";
   for (let i = 0; i <= 4; i++) {
     const y = sy(max * i / 4);
-    o += `<line x1="${L}" x2="${W - R}" y1="${y}" y2="${y}" class="grid"/>`;
-    o += `<text x="${L - 6}" y="${y + 4}" class="ax" text-anchor="end">${fmt(max * i / 4, 3)}</text>`;
+    o += `<line class="grid" x1="${L}" x2="${W - R}" y1="${y}" y2="${y}"/>`;
+    o += `<text class="ax" x="${L - 10}" y="${y + 6}" text-anchor="end">${fmt(max * i / 4, 3)}</text>`;
   }
   v.forEach((x, i) => {
-    const px = L + i * bw + bw * .18;
+    const px = L + i * bw + bw * .2;
     const hh = (H - T - B) * x / max;
-    o += `<rect class="b" x="${px}" y="${H - B - hh}" width="${bw * .64}" height="${Math.max(hh, 0)}" rx="3"><title>${labels[i]} · ${fmt(x, 3)} %</title></rect>`;
-    o += `<text x="${px + bw * .32}" y="${H - 16}" class="ax" text-anchor="middle">${labels[i]}</text>`;
+    o += `<rect class="b" x="${px}" y="${H - B - hh}" width="${bw * .6}" height="${Math.max(hh, 0)}" rx="3"><title>${labels[i]} · ${fmt(x, 3)} %</title></rect>`;
+    o += `<text class="ax" x="${px + bw * .3}" y="${H - 14}" text-anchor="middle">${labels[i]}</text>`;
   });
   el.innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Hueco de las cuatro fórmulas, en porcentaje">${o}</svg>`;
 }
 
 function lines(el, deg) {
-  const W = 720, H = 260, L = 78, R = 16, T = 16, B = 44;
+  const W = 720, H = 270, L = 84, R = 18, T = 16, B = 52;
   const xs = [];
   for (let a = 50; a <= 54.001; a += 0.05) xs.push(a);
   const pi = xs.map(a => pack(a).piGap);
@@ -481,49 +711,40 @@ function lines(el, deg) {
   let o = "";
   for (let i = 0; i <= 4; i++) {
     const y = sy(max * i / 4);
-    o += `<line x1="${L}" x2="${W - R}" y1="${y}" y2="${y}" class="grid"/>`;
-    o += `<text x="${L - 6}" y="${y + 4}" class="ax" text-anchor="end">${fmt(max * i / 4, 2)}</text>`;
+    o += `<line class="grid" x1="${L}" x2="${W - R}" y1="${y}" y2="${y}"/>`;
+    o += `<text class="ax" x="${L - 10}" y="${y + 6}" text-anchor="end">${fmt(max * i / 4, 2)}</text>`;
   }
   [50, 51, 52, 53, 54].forEach(a => {
-    o += `<text x="${sx(a)}" y="${H - 16}" class="ax" text-anchor="middle">${fmt(a, 0)}°</text>`;
+    o += `<text class="ax" x="${sx(a)}" y="${H - 16}" text-anchor="middle">${fmt(a, 0)}°</text>`;
   });
-  o += `<path d="${d(ph)}" class="ln ref"/><path d="${d(pi)}" class="ln main"/>`;
+  o += `<path class="ln ref" d="${d(ph)}"/><path class="ln main" d="${d(pi)}"/>`;
   const p = pack(deg);
-  o += `<circle cx="${sx(deg)}" cy="${sy(p.piGap)}" r="4.5" fill="var(--accent)" stroke="var(--on)" stroke-width="1.5"><title>Ángulo ${fmt(deg, 2)}°</title></circle>`;
-  el.innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Hueco de pi y de phi entre 50 y 54 grados">${o}</svg>`;
+  o += `<circle cx="${sx(deg)}" cy="${sy(p.piGap)}" r="6" fill="#18E667" stroke="#032612" stroke-width="2"><title>Ángulo ${fmt(deg, 2)}°</title></circle>`;
+  el.innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Alejamiento de pi y de phi entre 50 y 54 grados">${o}</svg>`;
 }
 
 const ang = document.getElementById("ang");
 function paint() {
   const deg = Number(ang.value);
   const p = pack(deg);
-  document.getElementById("k-ang").innerHTML = `${fmt(deg, 2)}<span>°</span>`;
-  document.getElementById("k-pi").innerHTML = `${fmt(p.piGap, 3)}<span>%</span>`;
-  document.getElementById("k-phi").innerHTML = `${fmt(p.phiGap, 3)}<span>%</span>`;
-  const piSide = p.abovePi ? "▲ por encima de π" : "▼ por debajo de π";
-  const phSide = p.abovePhi ? "▲ por encima de φ" : "▼ por debajo de φ";
-  document.getElementById("k-pi-d").textContent = piSide;
-  document.getElementById("k-phi-d").textContent = phSide;
-  const onVideo = Math.abs(deg - 51.85) < 0.001;
-  document.getElementById("k-ang-d").textContent = onVideo
-    ? "▲ el control está en el ángulo del vídeo"
-    : "▲ el control se ha apartado de 51,85°";
   document.getElementById("o-h").textContent = fmt(p.h, 2) + " m";
   document.getElementById("o-p").textContent = fmt(p.peri, 2) + " m";
   document.getElementById("o-r").textContent = fmt(p.ratio, 5);
-  document.getElementById("o-pi").textContent = fmt(PI, 5);
+  const side = p.abovePi ? "por encima" : "por debajo";
   document.getElementById("o-cap").textContent =
-    `Con ${fmt(deg, 2)}° la altura es ${fmt(p.h, 2)} m. 4 × ángulo / cúspide da el ${fmt(p.ePct, 3)} % de e. La tangente da el ${fmt(p.piPct, 3)} % de 4/π.`;
+    `Con ${fmt(deg, 2)}° la vuelta del círculo queda ${fmt(p.piGap, 3)} % ${side} de π. La cara queda ${fmt(p.phiGap, 3)} % ${p.ap > PHI ? "por encima" : "por debajo"} de φ.`;
   const gap = x => Math.abs(100 - x);
-  bars(document.getElementById("bars"), ["e", "π", "φ", "sen"], [gap(p.ePct), gap(p.piPct), gap(p.phiPct), gap(p.sinPct)]);
+  const gs = [gap(p.ePct), gap(p.piPct), gap(p.phiPct), gap(p.sinPct)];
+  bars(document.getElementById("bars"), ["e", "π", "φ", "seno"], gs);
+  document.getElementById("bar-note").textContent =
+    `e ${fmt(gs[0], 3)} %. π ${fmt(gs[1], 3)} %. φ ${fmt(gs[2], 3)} %. seno ${fmt(gs[3], 3)} %.`;
   lines(document.getElementById("lines"), deg);
 }
 ang.addEventListener("input", paint);
 document.getElementById("usar").addEventListener("click", () => {
-  ang.value = "51.85";
+  ang.value = "51.84";
   paint();
-  document.getElementById("calculo").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
-  ang.focus();
+  document.getElementById("triangulo").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
 });
 paint();
 
@@ -535,15 +756,13 @@ document.querySelectorAll("table").forEach(table => {
       buttons.forEach(b => b.setAttribute("aria-sort", "none"));
       btn.setAttribute("aria-sort", desc ? "descending" : "ascending");
       const body = table.tBodies[0];
-      const rows = [...body.rows];
-      rows.sort((a, b) => {
+      [...body.rows].sort((a, b) => {
         const x = a.cells[col].dataset.n ?? "";
         const y = b.cells[col].dataset.n ?? "";
         const nx = Number(x), ny = Number(y);
         const c = Number.isFinite(nx) && Number.isFinite(ny) ? nx - ny : x.localeCompare(y, "es");
         return desc ? -c : c;
-      });
-      rows.forEach(r => body.appendChild(r));
+      }).forEach(r => body.appendChild(r));
     });
   });
 });
